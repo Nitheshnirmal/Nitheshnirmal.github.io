@@ -19,7 +19,7 @@ about:
 ### About me
 
 ::: {#hero-heading}
-Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.
+I am a optical and radar remote sensing enthusiast. My main research interest focuses on using geodetic remote sensing for studying groundwater dynamics in the aquifers. The long term goal of mine is to be in the forefront of Hydrogeodesy research.
 
 ## Education
 
