@@ -13,7 +13,7 @@ website:
 format:
   html:
     theme: 
-      light: journal
+      light: spacelab
       dark: vapor
     css: styles.css
     toc: true
