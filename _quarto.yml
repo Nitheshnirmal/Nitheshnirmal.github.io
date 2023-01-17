@@ -13,8 +13,8 @@ website:
 format:
   html:
     theme: 
-      light: vapor
-      dark: cyborg
+      light: minty
+      dark: slate
     css: styles.css
     toc: true
 
