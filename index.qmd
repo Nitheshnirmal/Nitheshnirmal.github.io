@@ -7,13 +7,13 @@ about:
   image-width: 15em
   links:
     - text: LinkedIn
-      href: https://www.linkedin.com/in/samanthacsik/
+      href: https://www.linkedin.com/in/nitheyznirmal/
     - text: Twitter
-      href: https://twitter.com/SamanthaCsik
+      href: https://twitter.com/nitheshnirmal
     - text: GitHub
-      href: https://github.com/samanthacsik
+      href: https://github.com/Nitheshnirmal
     - text: Email
-      href: mailto:scsik@ucsb.edu
+      href: mailto:imnitheshnirmal@outlook.com
 ---
 
 [![NN](NN.jpg)](NN.jpg)
