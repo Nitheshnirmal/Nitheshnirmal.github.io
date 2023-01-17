@@ -1,5 +1,6 @@
 ---
-title: "Nitheshnirmal.github.io"
+title: "Nitheshnirmal Sadhasivam"
+image: NN.jpg
 ---
 
 This is a Quarto website.
