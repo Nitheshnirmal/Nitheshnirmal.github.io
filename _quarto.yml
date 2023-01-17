@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Nitheshnirmal.github.io"
+  title: "Nitheshnirmal"
   navbar:
     left:
       - href: index.qmd
