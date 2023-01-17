@@ -16,14 +16,16 @@ about:
       href: mailto:imnitheshnirmal@outlook.com
 ---
 
-### This content appears above the formatted about page content.
+### About me
 
 ::: {#hero-heading}
 Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.
 
 ## Education
 
-University of California, San Diego \| San Diego, CA PhD in Mathematics \| Sept 2011 - June 2015
+Virginia Tech \| Blacksburg, VA PhD in Geosciences \| Jan 2023 - Present
+
+University of Twente \| Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) \| Aug 2020 - Aug 2022
 
 Macalester College \| St. Paul MA B.A in Economics \| Sept 2007 - June 2011
 
