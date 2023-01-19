@@ -8,13 +8,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: Publications.qmd
-
+      - href: about.qmd
 format:
   html:
     theme: 
-      light: spacelab
-      dark: cyborg
+      light: journal
+      dark: journal
     css: styles.css
     toc: true
 
