@@ -13,7 +13,7 @@ format:
   html:
     theme: 
       light: journal
-      dark: journal
+      dark: lux
     css: styles.css
     toc: true
 
