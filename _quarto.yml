@@ -4,15 +4,24 @@ project:
 
 website:
   title: "Nitheshnirmal"
+  page-navigation: true
+  page-footer: 
+    center: "copyright 2023"
+    right: "Nitheshnirmal Sadhasivam"
   navbar:
+    foreground: light
+    background: dark
+    search: true
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
-      - href: publication.qmd  
+      - href: publication.qmd
+        text: Publications
       
 format:
   html:
+    page-layout: full
     theme: 
       light: journal
       dark: journal

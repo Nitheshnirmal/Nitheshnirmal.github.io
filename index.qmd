@@ -7,16 +7,22 @@ about:
   image-width: 15em
   links:
     - text: GS
+      icon: google
       href: https://scholar.google.com/citations?user=vpwUAzEAAAAJ&hl=en
     - text: LinkedIn
+      icon: linkedin
       href: https://www.linkedin.com/in/nitheyznirmal/
     - text: Twitter
+      icon: twitter 
       href: https://twitter.com/nitheshnirmal
     - text: GitHub
+      icon: github
       href: https://github.com/Nitheshnirmal
     - text: Email
+      icon: envelope
       href: mailto:imnitheshnirmal@outlook.com
     - text: CV
+      icon: file-person
       href: https://www.dropbox.com/s/xndfvg0ibtiuqnq/resume1.pdf?dl=0
 ---
 
@@ -24,6 +30,8 @@ about:
 
 ::: {#hero-heading}
 Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. I also have experience in working on lava domes as a part of my research internship work at the German Aerospace Centre (DLR) using radar remote sensing images.
+
+------------------------------------------------------------------------
 
 <div>
 
@@ -37,6 +45,8 @@ Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses
 
 </div>
 
+------------------------------------------------------------------------
+
 ## Education
 
 ![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"}**Virginia Tech** \| Blacksburg, VA, PhD in Geosciences \| Jan 2023 - Present
@@ -45,5 +55,5 @@ Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses
 
 ![](images/Bharathidasan_University_logo-01.png){width="47"} **Bharathidasan University** \| India, MSc in Geography (Integrated) \| July 2014 - April 2019
 
-## 
+------------------------------------------------------------------------
 :::
