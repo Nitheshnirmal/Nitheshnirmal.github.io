@@ -9,6 +9,9 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
+        text: Publication
+      - href: publication.qmd  
+      
 format:
   html:
     theme: 

@@ -6,6 +6,8 @@ about:
   image-shape: rounded
   image-width: 15em
   links:
+    - text: GS
+      href: https://scholar.google.com/citations?user=vpwUAzEAAAAJ&hl=en
     - text: LinkedIn
       href: https://www.linkedin.com/in/nitheyznirmal/
     - text: Twitter
@@ -14,24 +16,34 @@ about:
       href: https://github.com/Nitheshnirmal
     - text: Email
       href: mailto:imnitheshnirmal@outlook.com
+    - text: CV
+      href: https://www.dropbox.com/s/xndfvg0ibtiuqnq/resume1.pdf?dl=0
 ---
 
-### About me
+## About me
 
 ::: {#hero-heading}
-I am a optical and radar remote sensing enthusiast. My main research interest focuses on using geodetic remote sensing for studying groundwater dynamics in the aquifers. The long term goal of mine is to be in the forefront of Hydrogeodesy research.
+Hi, I am a PhD student at Virginia Tech, USA. My current research interest focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech.
 
-## Education
-
-**Virginia Tech** \| Blacksburg, VA PhD in Geosciences \| Jan 2023 - Present
-
-**University of Twente** \| Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) \| Aug 2020 - Aug 2022
-
-**Bharathidasan University** \| India MSc BSc in Geography \| July 2014 - April 2019
+<div>
 
 ## Experience
 
-**University of Twente** \| Education and Research Officer \| Nov 2022 - Dec 2022
+![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"} **Virginia Tech** \| Graduate Research Assistant \| Nov 2022 - Dec 2022
 
-**German Aerospace Centre** (DLR) \| Research Intern \| Dec 2021 - Feb 2022
+![](images/download-01.png){width="48"}**University of Twente** \| Education and Research Officer \| Nov 2022 - Dec 2022
+
+![](images/DLR_Logo.svg.png){width="47"}**German Aerospace Centre** **(DLR)** \| Research Intern \| Dec 2021 - Feb 2022
+
+</div>
+
+## Education
+
+![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"}**Virginia Tech** \| Blacksburg, VA, PhD in Geosciences \| Jan 2023 - Present
+
+![](images/download-01.png){width="48"}**University of Twente** \| Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) \| Aug 2020 - Aug 2022
+
+![](images/Bharathidasan_University_logo-01.png){width="47"} **Bharathidasan University** \| India, MSc in Geography (Integrated) \| July 2014 - April 2019
+
+## 
 :::
