@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Nithesh"
+  google-analytics: "G-WPPJJR0N52"
   page-navigation: true
   page-footer: 
     center: "copyright 2023"

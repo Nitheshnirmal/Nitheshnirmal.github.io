@@ -33,8 +33,6 @@ Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses
 
 I will be using this website to post my publications and blogs.
 
-
-
 ::: {#Experience}
 ## [Experience]{.underline}
 
@@ -45,8 +43,6 @@ I will be using this website to post my publications and blogs.
 ![](images/DLR_Logo.svg.png){width="47"}**German Aerospace Centre** **(DLR)** \| Research Intern \| Dec 2021 - Feb 2022
 :::
 
-
-
 ## [Education]{.underline} {#Education}
 
 ![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"}**Virginia Tech** \| Blacksburg, VA, PhD in Geosciences \| Jan 2023 - Present
@@ -54,6 +50,4 @@ I will be using this website to post my publications and blogs.
 ![](images/download-01.png){width="48"}**University of Twente** \| Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) \| Aug 2020 - Aug 2022
 
 ![](images/Bharathidasan_University_logo-01.png){width="47"} **Bharathidasan University** \| India, MSc in Geography (Integrated) \| July 2014 - April 2019
-
-
 :::
