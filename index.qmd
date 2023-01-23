@@ -36,7 +36,7 @@ I will be using this website to post my publications and blogs.
 ::: {#Experience}
 ## [Experience]{.underline}
 
-![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"} **Virginia Tech** \| Graduate Research Assistant \| Nov 2022 - Dec 2022
+![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"} **Virginia Tech** \| Graduate Research Assistant \| Jan 2023  - Present
 
 ![](images/download-01.png){width="48"}**University of Twente** \| Education and Research Officer \| Nov 2022 - Dec 2022
 

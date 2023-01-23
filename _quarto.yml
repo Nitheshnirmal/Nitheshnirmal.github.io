@@ -4,7 +4,9 @@ project:
 
 website:
   title: "Nithesh"
-  google-analytics: "G-WPPJJR0N52"
+  google-analytics: 
+    tracking-id: "G-WPPJJR0N52"
+    anonymize-ip: true
   page-navigation: true
   page-footer: 
     center: "copyright 2023"
