@@ -21,9 +21,6 @@ about:
     - text: Email
       icon: envelope
       href: mailto:imnitheshnirmal@outlook.com
-    - text: CV
-      icon: file-person
-      href: https://www.dropbox.com/s/xndfvg0ibtiuqnq/resume1.pdf?dl=0
 ---
 
 ## Bio
