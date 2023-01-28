@@ -23,7 +23,7 @@ title: "Publications"
 ::: {#2020}
 6.  Pourghasemi HR, Amiri M, Edalat M, Ahrari AH, Panahi M, **Sadhasivam N** & Lee S (2020) Assessment of urban infrastructures exposed to flood using susceptibility map and Google Earth Engine. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 14, pp.1923‑1937. DOI: <https://doi.org/10.1109/JSTARS.2020.3045278>
 
-7.   **Sadhasivam N,** Sheik Mohideen AR & Alankar B (2020) Optimisation of landfill sites for solid waste disposal in Thiruverumbur taluk of Tiruchirappalli district, India. Environmental Earth Sciences, 79(23), pp.1‑20. DOI: <https://doi.org/10.1007/s12665-020-09264-0>
+7.  **Sadhasivam N,** Sheik Mohideen AR & Alankar B (2020) Optimisation of landfill sites for solid waste disposal in Thiruverumbur taluk of Tiruchirappalli district, India. Environmental Earth Sciences, 79(23), pp.1‑20. DOI: <https://doi.org/10.1007/s12665-020-09264-0>
 
 8.  Pourghasemi HR, **Sadhasivam N**, Kariminejad N & Collins AL (2020) Gully erosion spatial modelling: Role of machine learning algorithms in selection of the best controlling factors and modelling process. Geoscience Frontiers, 11(6), pp.2207‑2219. DOI: <https://doi.org/10.1016/j.gsf.2020.03.005>
 
