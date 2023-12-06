@@ -24,7 +24,7 @@ website:
       - href: publication.qmd
         text: Publications
       - href: Blog.qmd
-        text: Blog
+
 
       
 format:
