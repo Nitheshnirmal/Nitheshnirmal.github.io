@@ -2,6 +2,14 @@
 title: "Publications"
 ---
 
+## 2023
+
+::: {#2023}
+1.  Ahmad SM, **Sadhasivam N**, Lisa M, Lombardo L, Emil MK, Fadel I, van Westen CJ, Ahmed A. & Tanyas H (2022) Standing on the shoulder of a giant landslide: A six-year long InSAR look at a slow-moving hillslope in the western Karakoram. Geomorphology, 444, 108959. DOI: <https://doi.org/10.1016/j.geomorph.2023.108959>
+
+2.  He K, Lombardo L, Chang L, **Sadhasivam N**, Hu X, Fang Z, & Tanyas H (2022) Investigating earthquake legacy effect on hillslope deformation using InSAR-derived time series. Earth Surface Processes and Landforms. DOI: <https://onlinelibrary.wiley.com/doi/epdf/10.1002/esp.5746>
+:::
+
 ## 2022
 
 ::: {#2022}
