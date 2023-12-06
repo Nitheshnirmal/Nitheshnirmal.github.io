@@ -21,9 +21,10 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
+      - href: Blog.qmd
       - href: publication.qmd
         text: Publications
-      - href: Blog.qmd
+
 
 
       
