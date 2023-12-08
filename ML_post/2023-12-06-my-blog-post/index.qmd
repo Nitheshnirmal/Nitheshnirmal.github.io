@@ -4,9 +4,7 @@ description: "ML assignment blog 1"
 date: 2023-12-01
 categories: [Machine Learning] 
 draft: false
-
 ---
-
 
 ```{r, warning=FALSE}
 
@@ -53,9 +51,6 @@ print(penguin_density_plots)
 
 ```
 
-
-
-
 ```{r}
 
 
@@ -84,7 +79,6 @@ print(penguin_density_plots3)
 
 
 ```
-
 
 ```{r}
 
@@ -120,4 +114,3 @@ print(conditional_probabilities_sex)
 
 
 ```
-
