@@ -24,7 +24,7 @@ website:
       - href: publication.qmd
         text: Publication
       - href: Blog.qmd
-        text: Blog
+        text: ML_blog
         
         
 

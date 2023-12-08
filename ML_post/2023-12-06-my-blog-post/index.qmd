@@ -1,0 +1,123 @@
+---
+title: "Probability theory and random variables"
+description: "ML assignment blog 1"
+date: 2023-12-01
+categories: [Machine Learning] 
+draft: false
+
+---
+
+
+```{r, warning=FALSE}
+
+install.packages("palmerpenguins")
+
+library(tidyr)
+library(palmerpenguins)
+library(ggplot2)
+
+data("penguins")
+
+str(penguins)
+
+summary(penguins)
+
+unique(penguins$species)
+
+flipper_length = penguins$flipper_length_mm
+
+summary(flipper_length)
+
+flip_len = na.omit(flipper_length)
+
+summary(flip_len)
+
+
+# Select one continuous variables for probability density plots
+selected_vars <- c(penguins$flipper_length_mm)
+                   
+selected_vars2 <- c(penguins$bill_length_mm)                   
+                   
+selected_vars3 <- c(penguins$body_mass_g)   
+
+# Create probability density plots for each variable by species
+
+penguin_density_plots <- ggplot(penguins, aes(x = selected_vars, fill = species)) +
+  geom_density(alpha = 0.7) +
+  facet_wrap(~species, scales = "free") +
+  labs(title = paste("Probability Density Plots of", selected_vars, "by Species"), x = "flipper length", y = "Density")
+
+
+print(penguin_density_plots)
+
+
+```
+
+
+
+
+```{r}
+
+
+
+penguin_density_plots2 <- ggplot(penguins, aes(x = selected_vars2, fill = species)) +
+  geom_density(alpha = 0.7) +
+  facet_wrap(~species, scales = "free") +
+  labs(title = paste("Probability Density Plots of", selected_vars2, "by Species"), x = "bill length", y = "Density")
+
+
+print(penguin_density_plots2)
+
+
+```
+
+```{r}
+
+
+penguin_density_plots3 <- ggplot(penguins, aes(x = selected_vars3, fill = species)) +
+  geom_density(alpha = 0.7) +
+  facet_wrap(~species, scales = "free") +
+  labs(title = paste("Probability Density Plots of", selected_vars3, "by Species"), x = "Body mass", y = "Density")
+
+
+print(penguin_density_plots3)
+
+
+```
+
+
+```{r}
+
+#conditional probabilities
+
+# Create a contingency table for species and island
+contingency_table_island <- table(penguins$species, penguins$island)
+
+# Calculate conditional probabilities given the island
+conditional_probabilities_island <- prop.table(contingency_table_island, margin = 1)
+
+# Create a contingency table for species and sex
+contingency_table_sex <- table(penguins$species, penguins$sex)
+
+# Calculate conditional probabilities given the sex
+conditional_probabilities_sex <- prop.table(contingency_table_sex, margin = 1)
+
+# Print the contingency tables
+print("Contingency Table for Species and Island:")
+print(contingency_table_island)
+
+print("Contingency Table for Species and Sex:")
+print(contingency_table_sex)
+
+# Print conditional probabilities
+print("Conditional Probabilities Given Island:")
+print(conditional_probabilities_island)
+
+print("Conditional Probabilities Given Sex:")
+print(conditional_probabilities_sex)
+
+
+
+
+```
+

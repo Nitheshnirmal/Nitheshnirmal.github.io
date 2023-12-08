@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nitheshnirmal.github.io/index.html</loc>
-    <lastmod>2023-12-06T20:10:15.639Z</lastmod>
+    <lastmod>2023-12-07T06:10:42.213Z</lastmod>
   </url>
   <url>
     <loc>https://nitheshnirmal.github.io/publication.html</loc>
-    <lastmod>2023-12-06T20:11:30.735Z</lastmod>
+    <lastmod>2023-12-07T06:09:48.465Z</lastmod>
   </url>
   <url>
     <loc>https://nitheshnirmal.github.io/Blog.html</loc>
-    <lastmod>2023-12-06T20:11:34.573Z</lastmod>
+    <lastmod>2023-12-07T17:38:38.130Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nitheshnirmal.github.io/ML_post/2023-12-06-my-blog-post/index.html</loc>
+    <lastmod>2023-12-07T17:38:27.514Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nitheshnirmal.github.io/ML_post/2023-12-06-my-blog-post-2/index.html</loc>
+    <lastmod>2023-12-07T17:38:45.650Z</lastmod>
   </url>
 </urlset>

@@ -21,6 +21,7 @@ about:
     - text: Email
       icon: envelope
       href: mailto:imnitheshnirmal@outlook.com
+title-block-banner: true
 ---
 
 ## Bio

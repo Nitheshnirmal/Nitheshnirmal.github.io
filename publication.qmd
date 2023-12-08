@@ -1,5 +1,6 @@
 ---
 title: "Research articles"
+title-block-banner: true
 ---
 
 ## 2023
