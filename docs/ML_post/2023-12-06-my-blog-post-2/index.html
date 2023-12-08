@@ -190,10 +190,11 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-and-call-the-required-libraries" id="toc-install-and-call-the-required-libraries" class="nav-link active" data-scroll-target="#install-and-call-the-required-libraries">Install and call the required libraries</a></li>
+  <li><a href="#install-and-call-the-required-libraries" id="toc-install-and-call-the-required-libraries" class="nav-link active" data-scroll-target="#install-and-call-the-required-libraries">1. Install and call the required libraries</a></li>
   <li><a href="#data-summary" id="toc-data-summary" class="nav-link" data-scroll-target="#data-summary">Data summary</a></li>
   <li><a href="#visualisation-and-correlation-check" id="toc-visualisation-and-correlation-check" class="nav-link" data-scroll-target="#visualisation-and-correlation-check">Visualisation and correlation check</a></li>
   <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data wrangling</a></li>
+  <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca">PCA</a></li>
   </ul>
 </nav>
     </div>
@@ -204,9 +205,15 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
 
 
 <section id="install-and-call-the-required-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="install-and-call-the-required-libraries">Install and call the required libraries</h2>
+<h2 class="anchored" data-anchor-id="install-and-call-the-required-libraries">1. Install and call the required libraries</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("factoextra", "FactoMineR", "nloptr", "lme4", "car", "rstatix",</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># "ggpubr"), dependencies = T)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("FactoMineR")</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.3     ✔ readr     2.1.4
@@ -675,7 +682,17 @@ The following objects are masked from 'package:stats':
  Max.   : 2.8716604   Max.   : 2.2021701   Max.   : 2.1394829  </code></pre>
 </div>
 </div>
-<p>The NA’s are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and</p>
+<p>The NA’s are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and PCA.</p>
+</section>
+<section id="pca" class="level2">
+<h2 class="anchored" data-anchor-id="pca">PCA</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(factoextra)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(FactoMineR)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#PCA = PCA(penguins[5:7], graph = F)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#fviz_screeplot(penguins_PCA)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

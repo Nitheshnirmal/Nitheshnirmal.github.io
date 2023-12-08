@@ -7,10 +7,15 @@ draft: false
 
 ---
 
-## Install and call the required libraries
+## 1. Install and call the required libraries
 
 
 ```{r, warning=FALSE}
+
+#install.packages(c("factoextra", "FactoMineR", "nloptr", "lme4", "car", "rstatix",
+                  # "ggpubr"), dependencies = T)
+
+#install.packages("FactoMineR")
 
 
 library(tidyverse)
@@ -72,7 +77,23 @@ summary(penguins)
 
 
 ```
-The NA's are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and 
+The NA's are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and PCA.
+
+## PCA
+
+```{r, warning=FALSE}
+
+#library(factoextra)
+#library(FactoMineR)
+
+#PCA = PCA(penguins[5:7], graph = F)
+#fviz_screeplot(penguins_PCA)
+
+
+```
+
+
+
 
 
 
