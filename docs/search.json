@@ -4,14 +4,18 @@
     "href": "index.html",
     "title": "Nitheshnirmal Sadhasivam",
     "section": "",
-    "text": "Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. I also have experience in working on lava domes as a part of my research internship work at the German Aerospace Centre (DLR) using radar remote sensing images. In future, I would like to be in the forefront of the Hydrogeodesy research.\nI will be using this website to post my publications and blogs.\n\n\n\n Virginia Tech | Graduate Research Assistant | Jan 2023 - Present\nUniversity of Twente | Education and Research Officer | Nov 2022 - Dec 2022\nGerman Aerospace Centre (DLR) | Research Intern | Dec 2021 - Feb 2022\n\n\n\n\nVirginia Tech | Blacksburg, VA, PhD in Geosciences | Jan 2023 - Present\nUniversity of Twente | Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) | Aug 2020 - Aug 2022\n Bharathidasan University | India, MSc in Geography (Integrated) | July 2014 - April 2019"
+    "text": "Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. In future, I would like to be in the forefront of the Hydrogeodesy research.\nI will be using this website to post my publications and blogs.\n\n\n\n Virginia Tech | Graduate Research Assistant | Jan 2023 - Present\nUniversity of Twente | Education and Research Officer | Nov 2022 - Dec 2022\nGerman Aerospace Centre (DLR) | Research Intern | Dec 2021 - Feb 2022\n\n\n\n\nVirginia Tech | Blacksburg, VA, PhD in Geosciences | Jan 2023 - Present\nUniversity of Twente | Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) | Aug 2020 - Aug 2022\n Bharathidasan University | India, MSc in Geography (Integrated) | July 2014 - April 2019"
   },
   {
     "objectID": "index.html#bio",
     "href": "index.html#bio",
     "title": "Nitheshnirmal Sadhasivam",
     "section": "",
+<<<<<<< HEAD
     "text": "Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. I also have experience in working on lava domes as a part of my research internship work at the German Aerospace Centre (DLR) using radar remote sensing images. In future, I would like to be in the forefront of the Hydrogeodesy research.\nI will be using this website to post my publications and blogs.\n\n\n\n Virginia Tech | Graduate Research Assistant | Jan 2023 - Present\nUniversity of Twente | Education and Research Officer | Nov 2022 - Dec 2022\nGerman Aerospace Centre (DLR) | Research Intern | Dec 2021 - Feb 2022\n\n\n\n\nVirginia Tech | Blacksburg, VA, PhD in Geosciences | Jan 2023 - Present\nUniversity of Twente | Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) | Aug 2020 - Aug 2022\n Bharathidasan University | India, MSc in Geography (Integrated) | July 2014 - April 2019"
+=======
+    "text": "Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. In future, I would like to be in the forefront of the Hydrogeodesy research.\nI will be using this website to post my publications and blogs.\n\n\n\n Virginia Tech | Graduate Research Assistant | Jan 2023 - Present\nUniversity of Twente | Education and Research Officer | Nov 2022 - Dec 2022\nGerman Aerospace Centre (DLR) | Research Intern | Dec 2021 - Feb 2022\n\n\n\n\nVirginia Tech | Blacksburg, VA, PhD in Geosciences | Jan 2023 - Present\nUniversity of Twente | Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) | Aug 2020 - Aug 2022\n Bharathidasan University | India, MSc in Geography (Integrated) | July 2014 - April 2019"
+>>>>>>> fb26665589c3c5bf4c11728503d2672c08a8aaf9
   },
   {
     "objectID": "index.html#experience",
@@ -75,6 +79,7 @@
     "title": "Research articles",
     "section": "",
     "text": "Ahmad SM, Sadhasivam N, Lisa M, Lombardo L, Emil MK, Fadel I, van Westen CJ, Ahmed A. & Tanyas H (2022) Standing on the shoulder of a giant landslide: A six-year long InSAR look at a slow-moving hillslope in the western Karakoram. Geomorphology, 444, 108959. DOI: https://doi.org/10.1016/j.geomorph.2023.108959\nHe K, Lombardo L, Chang L, Sadhasivam N, Hu X, Fang Z, & Tanyas H (2022) Investigating earthquake legacy effect on hillslope deformation using InSAR-derived time series. Earth Surface Processes and Landforms. DOI: https://onlinelibrary.wiley.com/doi/epdf/10.1002/esp.5746"
+<<<<<<< HEAD
   },
   {
     "objectID": "Blog.html",
@@ -131,5 +136,7 @@
     "title": "Clustering",
     "section": "PCA",
     "text": "PCA\n\n#library(factoextra)\n#library(FactoMineR)\n\n#PCA = PCA(penguins[5:7], graph = F)\n#fviz_screeplot(penguins_PCA)"
+=======
+>>>>>>> fb26665589c3c5bf4c11728503d2672c08a8aaf9
   }
 ]

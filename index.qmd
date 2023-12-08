@@ -27,7 +27,7 @@ title-block-banner: true
 ## Bio
 
 ::: {#Bio}
-Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. I also have experience in working on lava domes as a part of my research internship work at the German Aerospace Centre (DLR) using radar remote sensing images. In future, I would like to be in the forefront of the Hydrogeodesy research.
+Hi, I am a PhD candidate at Virginia Tech, USA. My current research work focuses on Hydrogeodesy, specifically focusing on aquifer mechanism. I am currently a member of the Hydrogeodesy group at Virginia tech. My past works focused on mostly natural hazards such as landslides, soil erosion (gully erosion), and also on groundwater. I completed my MSc in Geo-information Science and Earth Observation with a specialization in Natural Hazards and Disaster Risk Reduction from the ITC Faculty at the University of Twente in Netherlands. In future, I would like to be in the forefront of the Hydrogeodesy research.
 
 I will be using this website to post my publications and blogs.
 
