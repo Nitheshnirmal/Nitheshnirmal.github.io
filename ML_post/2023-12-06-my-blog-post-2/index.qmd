@@ -4,11 +4,9 @@ description: "ML assignment blog 2"
 date: 2023-12-02
 categories: [Machine Learning] 
 draft: false
-
 ---
 
 ## 1. Install and call the required libraries
-
 
 ```{r, warning=FALSE}
 
@@ -25,6 +23,7 @@ library(knitr)
 library(skimr)
 
 ```
+
 ## Data summary
 
 ```{r, warning=FALSE}
@@ -34,12 +33,14 @@ data= penguins_raw %>% clean_names()
 skim(penguins_raw)
 
 ```
+
 ```{r, warning=FALSE}
 
 summary(data)
 
 
 ```
+
 ## Visualisation and correlation check
 
 ```{r, warning=FALSE}
@@ -56,6 +57,7 @@ ggpairs(
 
 
 ```
+
 There is a high correlation observed between body_mass_g and flipper_length. So, I opt to remove the one of the two variables. I am removing the body_mass_g variable from the dataset.
 
 ## Data wrangling
@@ -77,6 +79,7 @@ summary(penguins)
 
 
 ```
+
 The NA's are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and PCA.
 
 ## PCA
@@ -91,10 +94,3 @@ The NA's are dropped. ID is added to each row. The variables culmen_length_mm, c
 
 
 ```
-
-
-
-
-
-
-
