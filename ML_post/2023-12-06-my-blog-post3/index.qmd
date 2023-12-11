@@ -1,0 +1,191 @@
+---
+title: "Classification"
+description: "ML assignment blog 3"
+date: 2023-12-02
+categories: [Machine Learning] 
+draft: false
+---
+
+In this blog regarding classification algorithms, we will see about the multiclass random forest model using penguins data. Based on certain features of penguins will try to train a multiclass random forest model and predict the penguin species.
+
+## 1. Required libraries
+
+```{r}
+
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+
+
+data("penguins")
+```
+
+## 2. Check data
+
+```{r}
+
+head(penguins)
+
+#Separate the species
+
+penguins %>% select(species) %>% unique()
+
+
+levels(penguins$species)
+```
+
+## 3. Create data for modelling
+
+```{r}
+
+
+#remove year feature and na's from the data
+
+data_df = penguins %>% drop_na()
+
+head(data_df)
+
+GGally::ggpairs(data_df, aes(color = species))
+```
+
+## 4. Split training and testing data
+
+```{r}
+
+data_split <- initial_split(data_df, strata = species)
+data_train <- training(data_split)
+data_test <- testing(data_split)
+data_split
+
+
+
+```
+
+## 5. Define model
+
+```{r}
+
+### Define Random Forest Model
+rf_spec <- rand_forest(trees = 1000,
+                       mtry = tune(),
+                       min_n = tune()) %>% 
+  set_mode("classification") %>% 
+  set_engine("ranger")
+rf_spec
+
+
+
+```
+
+## 6. Cross validation data
+
+```{r}
+
+### Cross Validation Sets to tune RF
+data_cv <- vfold_cv(data_df, strata = species)
+data_cv
+
+```
+
+## 7. workflow
+
+```{r}
+
+### Add formula and model together with workflow
+tune_wf <- workflow() %>% 
+  add_formula(species ~ .) %>% 
+  add_model(rf_spec)
+tune_wf
+
+
+```
+
+## 8. Tune Hyperparameters
+
+```{r}
+
+### Tune HyperParameters
+rf_tune <- tune_grid(
+  tune_wf,
+  resamples = data_cv,
+  control = control_resamples(save_pred = TRUE),
+  grid = 20
+)
+rf_tune
+
+
+rf_tune %>% autoplot()
+
+
+
+```
+
+## 9. predictions
+
+```{r}
+
+rf_tune %>% collect_predictions() %>% conf_mat(.pred_class, species )
+
+```
+
+## 10. ROC curves
+
+```{r}
+
+
+### ROC curves for 3 classes
+rf_tune %>% 
+  collect_predictions() %>% 
+  group_by(id) %>% 
+  roc_curve(species, .pred_Adelie:.pred_Gentoo) %>% 
+  autoplot()
+
+```
+
+```{r}
+
+### Finalize Model according to accuracy
+rf_final <- finalize_model(
+  rf_spec,
+  rf_tune %>% select_best("accuracy")
+)
+rf_final
+
+
+
+### Testing Data
+final_res <- workflow() %>% 
+  add_formula(species ~ .)%>%
+  add_model(rf_final) %>%
+  last_fit(data_split)
+
+
+### Metrics on Test data
+final_res %>% collect_metrics()
+
+
+final_res %>% collect_predictions() %>% conf_mat(.pred_class, species )
+
+
+final_prod <- workflow() %>% 
+  add_formula(species ~ .)%>%
+  add_model(rf_final) %>%
+  fit(data_df)
+
+
+final_prod
+```
+
+## 11. Variable importance
+
+```{r}
+
+
+library(vip)
+rf_final %>%
+  set_engine("ranger", importance = "permutation") %>%
+  fit(species ~ . ,
+      data = data_df
+  ) %>%
+  vip(geom = "col")
+```
