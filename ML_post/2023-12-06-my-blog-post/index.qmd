@@ -8,7 +8,7 @@ draft: false
 
 ```{r, warning=FALSE}
 
-install.packages("palmerpenguins")
+#install.packages("palmerpenguins")
 
 library(tidyr)
 library(palmerpenguins)

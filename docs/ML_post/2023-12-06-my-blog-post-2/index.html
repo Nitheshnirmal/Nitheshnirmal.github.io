@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WPPJJR0N52"></script>
@@ -190,11 +191,13 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-and-call-the-required-libraries" id="toc-install-and-call-the-required-libraries" class="nav-link active" data-scroll-target="#install-and-call-the-required-libraries">1. Install and call the required libraries</a></li>
-  <li><a href="#data-summary" id="toc-data-summary" class="nav-link" data-scroll-target="#data-summary">Data summary</a></li>
-  <li><a href="#visualisation-and-correlation-check" id="toc-visualisation-and-correlation-check" class="nav-link" data-scroll-target="#visualisation-and-correlation-check">Visualisation and correlation check</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data wrangling</a></li>
-  <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca">PCA</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data">1. Data</a></li>
+  <li><a href="#identify-and-remove-variables-with-high-correlation" id="toc-identify-and-remove-variables-with-high-correlation" class="nav-link" data-scroll-target="#identify-and-remove-variables-with-high-correlation">2. Identify and remove variables with high correlation</a></li>
+  <li><a href="#scale-the-variables" id="toc-scale-the-variables" class="nav-link" data-scroll-target="#scale-the-variables">3. Scale the variables</a></li>
+  <li><a href="#required-packages" id="toc-required-packages" class="nav-link" data-scroll-target="#required-packages">4. Required packages</a></li>
+  <li><a href="#euclidean-distance" id="toc-euclidean-distance" class="nav-link" data-scroll-target="#euclidean-distance">5. Euclidean Distance</a></li>
+  <li><a href="#optimal-number-of-clusters" id="toc-optimal-number-of-clusters" class="nav-link" data-scroll-target="#optimal-number-of-clusters">6. Optimal number of clusters</a></li>
+  <li><a href="#visualizing-clusters-with-4-and-5-clusters" id="toc-visualizing-clusters-with-4-and-5-clusters" class="nav-link" data-scroll-target="#visualizing-clusters-with-4-and-5-clusters">7. Visualizing clusters with 4 and 5 clusters</a></li>
   </ul>
 </nav>
     </div>
@@ -204,63 +207,31 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
 
 
 
-<section id="install-and-call-the-required-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="install-and-call-the-required-libraries">1. Install and call the required libraries</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">1. Data</h2>
+<p>For clustering using K-means, we use the freely available USArrests dataset. We aim to cluster the states of US based on the crimes from the USAressts data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("factoextra", "FactoMineR", "nloptr", "lme4", "car", "rstatix",</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># "ggpubr"), dependencies = T)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("FactoMineR")</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"USArrests"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.3     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'janitor'
-
-The following objects are masked from 'package:stats':
-
-    chisq.test, fisher.test</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="data-summary" class="level2">
-<h2 class="anchored" data-anchor-id="data-summary">Data summary</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span> penguins_raw <span class="sc">%&gt;%</span> <span class="fu">clean_names</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(penguins_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Data summary</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Name</td>
-<td style="text-align: left;">penguins_raw</td>
+<td style="text-align: left;">USArrests</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">344</td>
+<td style="text-align: left;">50</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">17</td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">_______________________</td>
@@ -271,16 +242,8 @@ The following objects are masked from 'package:stats':
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Date</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">7</td>
+<td style="text-align: left;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">________________________</td>
@@ -292,171 +255,20 @@ The following objects are masked from 'package:stats':
 </tr>
 </tbody>
 </table>
-<p><strong>Variable type: character</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">empty</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: right;">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">studyName</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Species</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">33</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Region</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Island</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Stage</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Individual ID</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">190</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Clutch Completion</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sex</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">0.97</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Comments</td>
-<td style="text-align: right;">290</td>
-<td style="text-align: right;">0.16</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">68</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: Date</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 12%">
-<col style="width: 17%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: left;">min</th>
-<th style="text-align: left;">max</th>
-<th style="text-align: left;">median</th>
-<th style="text-align: right;">n_unique</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Date Egg</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2007-11-09</td>
-<td style="text-align: left;">2009-12-01</td>
-<td style="text-align: left;">2008-11-09</td>
-<td style="text-align: right;">50</td>
-</tr>
-</tbody>
-</table>
 <p><strong>Variable type: numeric</strong></p>
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 9%">
-<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 15%">
 <col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
 <col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -475,223 +287,381 @@ The following objects are masked from 'package:stats':
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Sample Number</td>
+<td style="text-align: left;">Murder</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">63.15</td>
-<td style="text-align: right;">40.43</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">29.00</td>
-<td style="text-align: right;">58.00</td>
-<td style="text-align: right;">95.25</td>
-<td style="text-align: right;">152.00</td>
-<td style="text-align: left;">▇▇▆▅▃</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7.79</td>
+<td style="text-align: right;">4.36</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">7.25</td>
+<td style="text-align: right;">11.25</td>
+<td style="text-align: right;">17.4</td>
+<td style="text-align: left;">▇▇▅▅▃</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Culmen Length (mm)</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">43.92</td>
-<td style="text-align: right;">5.46</td>
-<td style="text-align: right;">32.10</td>
-<td style="text-align: right;">39.23</td>
-<td style="text-align: right;">44.45</td>
-<td style="text-align: right;">48.50</td>
-<td style="text-align: right;">59.60</td>
-<td style="text-align: left;">▃▇▇▆▁</td>
+<td style="text-align: left;">Assault</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">170.76</td>
+<td style="text-align: right;">83.34</td>
+<td style="text-align: right;">45.0</td>
+<td style="text-align: right;">109.00</td>
+<td style="text-align: right;">159.00</td>
+<td style="text-align: right;">249.00</td>
+<td style="text-align: right;">337.0</td>
+<td style="text-align: left;">▆▇▃▅▃</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Culmen Depth (mm)</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">17.15</td>
-<td style="text-align: right;">1.97</td>
-<td style="text-align: right;">13.10</td>
-<td style="text-align: right;">15.60</td>
-<td style="text-align: right;">17.30</td>
-<td style="text-align: right;">18.70</td>
-<td style="text-align: right;">21.50</td>
-<td style="text-align: left;">▅▅▇▇▂</td>
+<td style="text-align: left;">UrbanPop</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">65.54</td>
+<td style="text-align: right;">14.47</td>
+<td style="text-align: right;">32.0</td>
+<td style="text-align: right;">54.50</td>
+<td style="text-align: right;">66.00</td>
+<td style="text-align: right;">77.75</td>
+<td style="text-align: right;">91.0</td>
+<td style="text-align: left;">▁▆▇▅▆</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Flipper Length (mm)</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">200.92</td>
-<td style="text-align: right;">14.06</td>
-<td style="text-align: right;">172.00</td>
-<td style="text-align: right;">190.00</td>
-<td style="text-align: right;">197.00</td>
-<td style="text-align: right;">213.00</td>
-<td style="text-align: right;">231.00</td>
-<td style="text-align: left;">▂▇▃▅▂</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Body Mass (g)</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">4201.75</td>
-<td style="text-align: right;">801.95</td>
-<td style="text-align: right;">2700.00</td>
-<td style="text-align: right;">3550.00</td>
-<td style="text-align: right;">4050.00</td>
-<td style="text-align: right;">4750.00</td>
-<td style="text-align: right;">6300.00</td>
-<td style="text-align: left;">▃▇▆▃▂</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Delta 15 N (o/oo)</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">0.96</td>
-<td style="text-align: right;">8.73</td>
-<td style="text-align: right;">0.55</td>
-<td style="text-align: right;">7.63</td>
-<td style="text-align: right;">8.30</td>
-<td style="text-align: right;">8.65</td>
-<td style="text-align: right;">9.17</td>
-<td style="text-align: right;">10.03</td>
-<td style="text-align: left;">▃▇▆▅▂</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Delta 13 C (o/oo)</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">0.96</td>
-<td style="text-align: right;">-25.69</td>
-<td style="text-align: right;">0.79</td>
-<td style="text-align: right;">-27.02</td>
-<td style="text-align: right;">-26.32</td>
-<td style="text-align: right;">-25.83</td>
-<td style="text-align: right;">-25.06</td>
-<td style="text-align: right;">-23.79</td>
-<td style="text-align: left;">▆▇▅▅▂</td>
+<td style="text-align: left;">Rape</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">21.23</td>
+<td style="text-align: right;">9.37</td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;">15.08</td>
+<td style="text-align: right;">20.10</td>
+<td style="text-align: right;">26.17</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: left;">▆▇▅▂▂</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  study_name        sample_number      species             region         
- Length:344         Min.   :  1.00   Length:344         Length:344        
- Class :character   1st Qu.: 29.00   Class :character   Class :character  
- Mode  :character   Median : 58.00   Mode  :character   Mode  :character  
-                    Mean   : 63.15                                        
-                    3rd Qu.: 95.25                                        
-                    Max.   :152.00                                        
-                                                                          
-    island             stage           individual_id      clutch_completion 
- Length:344         Length:344         Length:344         Length:344        
- Class :character   Class :character   Class :character   Class :character  
- Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-                                                                            
-                                                                            
-                                                                            
-                                                                            
-    date_egg          culmen_length_mm culmen_depth_mm flipper_length_mm
- Min.   :2007-11-09   Min.   :32.10    Min.   :13.10   Min.   :172.0    
- 1st Qu.:2007-11-28   1st Qu.:39.23    1st Qu.:15.60   1st Qu.:190.0    
- Median :2008-11-09   Median :44.45    Median :17.30   Median :197.0    
- Mean   :2008-11-27   Mean   :43.92    Mean   :17.15   Mean   :200.9    
- 3rd Qu.:2009-11-16   3rd Qu.:48.50    3rd Qu.:18.70   3rd Qu.:213.0    
- Max.   :2009-12-01   Max.   :59.60    Max.   :21.50   Max.   :231.0    
-                      NA's   :2        NA's   :2       NA's   :2        
-  body_mass_g       sex            delta_15_n_o_oo  delta_13_c_o_oo 
- Min.   :2700   Length:344         Min.   : 7.632   Min.   :-27.02  
- 1st Qu.:3550   Class :character   1st Qu.: 8.300   1st Qu.:-26.32  
- Median :4050   Mode  :character   Median : 8.652   Median :-25.83  
- Mean   :4202                      Mean   : 8.733   Mean   :-25.69  
- 3rd Qu.:4750                      3rd Qu.: 9.172   3rd Qu.:-25.06  
- Max.   :6300                      Max.   :10.025   Max.   :-23.79  
- NA's   :2                         NA's   :14       NA's   :13      
-   comments        
- Length:344        
- Class :character  
- Mode  :character  
-                   
-                   
-                   
-                   </code></pre>
+<pre><code>           Murder Assault UrbanPop Rape
+Alabama      13.2     236       58 21.2
+Alaska       10.0     263       48 44.5
+Arizona       8.1     294       80 31.0
+Arkansas      8.8     190       50 19.5
+California    9.0     276       91 40.6
+Colorado      7.9     204       78 38.7</code></pre>
 </div>
 </div>
 </section>
-<section id="visualisation-and-correlation-check" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-and-correlation-check">Visualisation and correlation check</h2>
+<section id="identify-and-remove-variables-with-high-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="identify-and-remove-variables-with-high-correlation">2. Identify and remove variables with high correlation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Registered S3 method overwritten by 'GGally':
   method from   
   +.gg   ggplot2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">9</span><span class="sc">:</span><span class="dv">14</span>),</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">diag =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"barDiag"</span>, <span class="at">color =</span> <span class="st">"red"</span>)),</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"cor"</span>, <span class="at">bins =</span> <span class="dv">40</span>))</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> USArrests,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>There is a high correlation observed between body_mass_g and flipper_length. So, I opt to remove the one of the two variables. I am removing the body_mass_g variable from the dataset.</p>
+<p>From the analysis, we see that there’s a high correlation between murder and assault. So, we have to remove either one of them. Here, we remove murder for the further clustering analysis.</p>
 </section>
-<section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h2>
+<section id="scale-the-variables" class="level2">
+<h2 class="anchored" data-anchor-id="scale-the-variables">3. Scale the variables</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   penguins <span class="ot">=</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span> (</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">id =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">species =</span> <span class="fu">word</span> (species, <span class="dv">1</span>),</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">culmen_length_mm =</span> <span class="fu">scale</span>(culmen_length_mm),</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">culmen_depth_mm =</span> <span class="fu">scale</span>(culmen_depth_mm),</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">flipper_length_mm =</span> <span class="fu">scale</span>(flipper_length_mm)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span> (id, species, island, sex, culmen_length_mm, culmen_depth_mm, flipper_length_mm) <span class="sc">%&gt;%</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">drop_na</span> (sex)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Scale</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data_scaled <span class="ot">=</span> <span class="fu">scale</span>(USArrests)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_scaled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       id          species             island              sex           
- Min.   :  1.0   Length:333         Length:333         Length:333        
- 1st Qu.: 90.0   Class :character   Class :character   Class :character  
- Median :173.0   Mode  :character   Mode  :character   Mode  :character  
- Mean   :174.3                                                           
- 3rd Qu.:259.0                                                           
- Max.   :344.0                                                           
- culmen_length_mm.V1   culmen_depth_mm.V1  flipper_length_mm.V1
- Min.   :-2.1653537   Min.   :-2.0514400   Min.   :-2.0563073  
- 1st Qu.:-0.8099390   1st Qu.:-0.7854846   1st Qu.:-0.7762357  
- Median : 0.1058817   Median : 0.0753651   Median :-0.2784301  
- Mean   : 0.0129796   Mean   : 0.0069350   Mean   : 0.0036811  
- 3rd Qu.: 0.8568547   3rd Qu.: 0.7843001   3rd Qu.: 0.8594113  
- Max.   : 2.8716604   Max.   : 2.2021701   Max.   : 2.1394829  </code></pre>
+<pre><code>               Murder   Assault   UrbanPop         Rape
+Alabama    1.24256408 0.7828393 -0.5209066 -0.003416473
+Alaska     0.50786248 1.1068225 -1.2117642  2.484202941
+Arizona    0.07163341 1.4788032  0.9989801  1.042878388
+Arkansas   0.23234938 0.2308680 -1.0735927 -0.184916602
+California 0.27826823 1.2628144  1.7589234  2.067820292
+Colorado   0.02571456 0.3988593  0.8608085  1.864967207</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_selected <span class="ot">=</span> data_scaled[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_selected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Assault   UrbanPop         Rape
+Alabama    0.7828393 -0.5209066 -0.003416473
+Alaska     1.1068225 -1.2117642  2.484202941
+Arizona    1.4788032  0.9989801  1.042878388
+Arkansas   0.2308680 -1.0735927 -0.184916602
+California 1.2628144  1.7589234  2.067820292
+Colorado   0.3988593  0.8608085  1.864967207</code></pre>
 </div>
 </div>
-<p>The NA’s are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and PCA.</p>
 </section>
-<section id="pca" class="level2">
-<h2 class="anchored" data-anchor-id="pca">PCA</h2>
+<section id="required-packages" class="level2">
+<h2 class="anchored" data-anchor-id="required-packages">4. Required packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(factoextra)</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#library(FactoMineR)</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#PCA = PCA(penguins[5:7], graph = F)</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#fviz_screeplot(penguins_PCA)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>crime <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="dv">10</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>crime_1 <span class="ot">=</span> data_selected[crime,]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crime_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Assault    UrbanPop        Rape
+New Mexico  1.3708088  0.30812248  1.16031965
+Iowa       -1.3770485 -0.58999237 -1.06038781
+Indiana    -0.6930840 -0.03730631 -0.02476943
+Arizona     1.4788032  0.99898006  1.04287839
+Tennessee   0.2068693 -0.45182086  0.60514278
+Texas       0.3628612  0.99898006  0.45567209</code></pre>
+</div>
+</div>
+</section>
+<section id="euclidean-distance" class="level2">
+<h2 class="anchored" data-anchor-id="euclidean-distance">5. Euclidean Distance</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dist_eucli <span class="ot">=</span> <span class="fu">dist</span>(crime_1, <span class="at">method =</span> <span class="st">"euclidean"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dist_eucli)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.6453905 2.4048723 0.7090412 1.4968268 1.4105924 1.5550653</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">as.matrix</span>(dist_eucli)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           New Mexico Iowa Indiana Arizona
+New Mexico        0.0  3.6     2.4     0.7
+Iowa              3.6  0.0     1.4     3.9
+Indiana           2.4  1.4     0.0     2.6
+Arizona           0.7  3.9     2.6     0.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_dist</span>(dist_eucli)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="optimal-number-of-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="optimal-number-of-clusters">6. Optimal number of clusters</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elbow method</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_nbclust</span>(data_selected, kmeans, <span class="at">method =</span> <span class="st">'wss'</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4</span>, <span class="at">linetype=</span><span class="dv">5</span>, <span class="at">col=</span> <span class="st">"green"</span>)<span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Elbow method"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Silhouette method</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_nbclust</span>(data_selected, kmeans, <span class="at">method =</span> <span class="st">"silhouette"</span>)<span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Silhouette method"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>kmeans_1 <span class="ot">=</span> <span class="fu">kmeans</span>(data_selected, <span class="dv">4</span>, <span class="at">nstart =</span> <span class="dv">20</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>kmeans_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>K-means clustering with 4 clusters of sizes 18, 11, 13, 8
+
+Cluster means:
+     Assault   UrbanPop        Rape
+1 -0.3151036  0.5844655 -0.16593620
+2  1.1875456  0.7351981  1.40005511
+3 -1.1066010 -0.9301069 -0.96676331
+4  0.8743346 -0.8145211  0.01927104
+
+Clustering vector:
+       Alabama         Alaska        Arizona       Arkansas     California 
+             4              2              2              4              2 
+      Colorado    Connecticut       Delaware        Florida        Georgia 
+             2              1              1              2              4 
+        Hawaii          Idaho       Illinois        Indiana           Iowa 
+             1              3              2              1              3 
+        Kansas       Kentucky      Louisiana          Maine       Maryland 
+             1              3              4              3              2 
+ Massachusetts       Michigan      Minnesota    Mississippi       Missouri 
+             1              2              3              4              1 
+       Montana       Nebraska         Nevada  New Hampshire     New Jersey 
+             3              3              2              3              1 
+    New Mexico       New York North Carolina   North Dakota           Ohio 
+             2              2              4              3              1 
+      Oklahoma         Oregon   Pennsylvania   Rhode Island South Carolina 
+             1              1              1              1              4 
+  South Dakota      Tennessee          Texas           Utah        Vermont 
+             3              4              1              1              3 
+      Virginia     Washington  West Virginia      Wisconsin        Wyoming 
+             1              1              3              3              1 
+
+Within cluster sum of squares by cluster:
+[1] 16.371159 14.194571  8.421711  5.818560
+ (between_SS / total_SS =  69.5 %)
+
+Available components:
+
+[1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss"
+[6] "betweenss"    "size"         "iter"         "ifault"      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>kmeans_1<span class="sc">$</span>betweenss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 102.194</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">cbind</span>(data_selected, <span class="at">cluster =</span> kmeans_1<span class="sc">$</span>cluster)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Assault   UrbanPop         Rape cluster
+Alabama    0.7828393 -0.5209066 -0.003416473       4
+Alaska     1.1068225 -1.2117642  2.484202941       2
+Arizona    1.4788032  0.9989801  1.042878388       2
+Arkansas   0.2308680 -1.0735927 -0.184916602       4
+California 1.2628144  1.7589234  2.067820292       2
+Colorado   0.3988593  0.8608085  1.864967207       2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>kmeans_2 <span class="ot">=</span> <span class="fu">kmeans</span>(data_selected, <span class="dv">5</span>, <span class="at">nstart =</span> <span class="dv">20</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>kmeans_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>K-means clustering with 5 clusters of sizes 13, 11, 5, 8, 13
+
+Cluster means:
+      Assault    UrbanPop       Rape
+1 -1.10660100 -0.93010687 -0.9667633
+2  1.18754560  0.73519807  1.4000551
+3  1.07322427 -1.14267844 -0.2084049
+4 -0.57309024  1.06806582 -0.4798543
+5  0.04164707  0.09023663  0.1575520
+
+Clustering vector:
+       Alabama         Alaska        Arizona       Arkansas     California 
+             3              2              2              3              2 
+      Colorado    Connecticut       Delaware        Florida        Georgia 
+             2              4              5              2              5 
+        Hawaii          Idaho       Illinois        Indiana           Iowa 
+             4              1              2              5              1 
+        Kansas       Kentucky      Louisiana          Maine       Maryland 
+             5              1              5              1              2 
+ Massachusetts       Michigan      Minnesota    Mississippi       Missouri 
+             4              2              1              3              5 
+       Montana       Nebraska         Nevada  New Hampshire     New Jersey 
+             1              1              2              1              4 
+    New Mexico       New York North Carolina   North Dakota           Ohio 
+             2              2              3              1              4 
+      Oklahoma         Oregon   Pennsylvania   Rhode Island South Carolina 
+             5              5              4              4              3 
+  South Dakota      Tennessee          Texas           Utah        Vermont 
+             1              5              5              4              1 
+      Virginia     Washington  West Virginia      Wisconsin        Wyoming 
+             5              5              1              1              5 
+
+Within cluster sum of squares by cluster:
+[1]  8.421711 14.194571  2.616274  4.873222  8.006551
+ (between_SS / total_SS =  74.1 %)
+
+Available components:
+
+[1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss"
+[6] "betweenss"    "size"         "iter"         "ifault"      </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>kmeans_3 <span class="ot">=</span> <span class="fu">kmeans</span>(data_scaled, <span class="dv">4</span>, <span class="at">nstart =</span> <span class="dv">20</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>kmeans_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>K-means clustering with 4 clusters of sizes 8, 13, 13, 16
+
+Cluster means:
+      Murder    Assault   UrbanPop        Rape
+1  1.4118898  0.8743346 -0.8145211  0.01927104
+2 -0.9615407 -1.1066010 -0.9301069 -0.96676331
+3  0.6950701  1.0394414  0.7226370  1.27693964
+4 -0.4894375 -0.3826001  0.5758298 -0.26165379
+
+Clustering vector:
+       Alabama         Alaska        Arizona       Arkansas     California 
+             1              3              3              1              3 
+      Colorado    Connecticut       Delaware        Florida        Georgia 
+             3              4              4              3              1 
+        Hawaii          Idaho       Illinois        Indiana           Iowa 
+             4              2              3              4              2 
+        Kansas       Kentucky      Louisiana          Maine       Maryland 
+             4              2              1              2              3 
+ Massachusetts       Michigan      Minnesota    Mississippi       Missouri 
+             4              3              2              1              3 
+       Montana       Nebraska         Nevada  New Hampshire     New Jersey 
+             2              2              3              2              4 
+    New Mexico       New York North Carolina   North Dakota           Ohio 
+             3              3              1              2              4 
+      Oklahoma         Oregon   Pennsylvania   Rhode Island South Carolina 
+             4              4              4              4              1 
+  South Dakota      Tennessee          Texas           Utah        Vermont 
+             2              1              3              4              2 
+      Virginia     Washington  West Virginia      Wisconsin        Wyoming 
+             4              4              2              2              4 
+
+Within cluster sum of squares by cluster:
+[1]  8.316061 11.952463 19.922437 16.212213
+ (between_SS / total_SS =  71.2 %)
+
+Available components:
+
+[1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss"
+[6] "betweenss"    "size"         "iter"         "ifault"      </code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-clusters-with-4-and-5-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-clusters-with-4-and-5-clusters">7. Visualizing clusters with 4 and 5 clusters</h2>
+<p>We use two different dataframes, data_selected and data_scaled for our clustering with 4 and 5 clusters. The variables without removing murder variable (data_scaled) for high correlation with assault variable has a better cluster visualization. In this case, using PCA would be really useful in creating new variable with less correlation without losing most information.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(kmeans_1, <span class="at">data =</span> data_selected,</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>, <span class="st">"darkgreen"</span>),</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">ellipse.type =</span> <span class="st">"euclid"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">star.plot =</span> T,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> T,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(kmeans_2, <span class="at">data =</span> data_selected,</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>, <span class="st">"darkgreen"</span>, <span class="st">"yellow"</span>),</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">ellipse.type =</span> <span class="st">"euclid"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">star.plot =</span> T,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> T,</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(kmeans_3, <span class="at">data =</span> data_scaled,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>, <span class="st">"darkgreen"</span>),</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">ellipse.type =</span> <span class="st">"euclid"</span>,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">star.plot =</span> T,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> T,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 
 

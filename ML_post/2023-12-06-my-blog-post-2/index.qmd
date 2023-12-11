@@ -6,91 +6,173 @@ categories: [Machine Learning]
 draft: false
 ---
 
-## 1. Install and call the required libraries
+## 1. Data
 
-```{r, warning=FALSE}
+For clustering using K-means, we use the freely available USArrests dataset. We aim to cluster the states of US based on the crimes from the USAressts data.
 
-#install.packages(c("factoextra", "FactoMineR", "nloptr", "lme4", "car", "rstatix",
-                  # "ggpubr"), dependencies = T)
+```{r}
 
-#install.packages("FactoMineR")
-
-
-library(tidyverse)
-library(janitor)
-library(palmerpenguins)
-library(knitr)
 library(skimr)
 
-```
+data("USArrests")
 
-## Data summary
 
-```{r, warning=FALSE}
+skim(USArrests)
 
-data= penguins_raw %>% clean_names()
+head(USArrests)
 
-skim(penguins_raw)
-
-```
-
-```{r, warning=FALSE}
-
-summary(data)
 
 
 ```
 
-## Visualisation and correlation check
+## 2. Identify and remove variables with high correlation
 
-```{r, warning=FALSE}
+```{r}
 
 library(GGally)
 
+
 ggpairs(
-  data = data,
-  columns = c(9:14),
-  diag = list(continuous = wrap("barDiag", color = "red")),
-  upper = list(continuous = wrap("cor", bins = 40))
-)
+  
+  data = USArrests,
+  columns = c(1:4))
+  
+```
 
+From the analysis, we see that there's a high correlation between murder and assault. So, we have to remove either one of them. Here, we remove murder for the further clustering analysis.
+
+## 3. Scale the variables
+
+```{r}
+
+
+
+#Scale
+
+data_scaled = scale(USArrests)
+
+head(data_scaled)
+
+data_selected = data_scaled[, 2:4]
+
+head(data_selected)
+```
+
+## 4. Required packages
+
+```{r}
+
+library(cluster)
+library(factoextra)
+library(ggplot2)
+
+
+set.seed(123)
+crime = sample(1:50, 10)
+
+crime_1 = data_selected[crime,]
+
+head(crime_1)
+
+```
+
+## 5. Euclidean Distance
+
+```{r}
+
+dist_eucli = dist(crime_1, method = "euclidean")
+
+head(dist_eucli)
+
+```
+
+```{r}
+
+
+round(as.matrix(dist_eucli)[1:4, 1:4], 1)
+
+fviz_dist(dist_eucli)
+```
+
+## 6. Optimal number of clusters
+
+```{r}
+
+
+# Elbow method
+fviz_nbclust(data_selected, kmeans, method = 'wss') +
+             geom_vline(xintercept = 4, linetype=5, col= "green")+
+    labs(subtitle = "Elbow method")
+
+
+# Silhouette method
+fviz_nbclust(data_selected, kmeans, method = "silhouette")+
+  labs(subtitle = "Silhouette method")
 
 
 ```
 
-There is a high correlation observed between body_mass_g and flipper_length. So, I opt to remove the one of the two variables. I am removing the body_mass_g variable from the dataset.
+```{r}
 
-## Data wrangling
 
-```{r, warning=FALSE}
+kmeans_1 = kmeans(data_selected, 4, nstart = 20)
+kmeans_1
 
-   penguins = data %>%
-      mutate (
-         id = row_number(),
-         species = word (species, 1),
-         culmen_length_mm = scale(culmen_length_mm),
-         culmen_depth_mm = scale(culmen_depth_mm),
-         flipper_length_mm = scale(flipper_length_mm)
-         ) %>%
-      select (id, species, island, sex, culmen_length_mm, culmen_depth_mm, flipper_length_mm) %>%
-      drop_na (sex)
-
-summary(penguins)
-
+kmeans_1$betweenss
 
 ```
 
-The NA's are dropped. ID is added to each row. The variables culmen_length_mm, culmen_depth_mm and flipper_length_mm are scaled. We will use PCA analysis to reduce the dimensionality of the dataset. We will only use culmen_length_mm, culmen_depth_mm and flipper_length_mm for the K-means clustering and PCA.
+```{r}
 
-## PCA
+df = cbind(data_selected, cluster = kmeans_1$cluster)
 
-```{r, warning=FALSE}
+head(df)
+```
 
-#library(factoextra)
-#library(FactoMineR)
+```{r}
 
-#PCA = PCA(penguins[5:7], graph = F)
-#fviz_screeplot(penguins_PCA)
+
+kmeans_2 = kmeans(data_selected, 5, nstart = 20)
+kmeans_2
+
+```
+
+```{r}
+
+kmeans_3 = kmeans(data_scaled, 4, nstart = 20)
+kmeans_3
+
+```
+
+## 7. Visualizing clusters with 4 and 5 clusters
+
+We use two different dataframes, data_selected and data_scaled for our clustering with 4 and 5 clusters. The variables without removing murder variable (data_scaled) for high correlation with assault variable has a better cluster visualization. In this case, using PCA would be really useful in creating new variable with less correlation without losing most information.
+
+```{r}
+
+
+fviz_cluster(kmeans_1, data = data_selected,
+             palette=c("red", "blue", "black", "darkgreen"),
+             ellipse.type = "euclid",
+             star.plot = T,
+             repel = T,
+             ggtheme = theme())
+
+
+fviz_cluster(kmeans_2, data = data_selected,
+             palette=c("red", "blue", "black", "darkgreen", "yellow"),
+             ellipse.type = "euclid",
+             star.plot = T,
+             repel = T,
+             ggtheme = theme())
+
+
+fviz_cluster(kmeans_3, data = data_scaled,
+             palette=c("red", "blue", "black", "darkgreen"),
+             ellipse.type = "euclid",
+             star.plot = T,
+             repel = T,
+             ggtheme = theme())
 
 
 ```
