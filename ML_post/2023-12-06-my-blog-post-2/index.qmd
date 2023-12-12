@@ -6,6 +6,8 @@ categories: [Machine Learning]
 draft: false
 ---
 
+K-means clustering is a popular unsupervised machine learning algorithm designed for partitioning a dataset into distinct groups, or clusters, based on similarity patterns among data points. The algorithm iteratively assigns each data point to the cluster whose mean is closest, forming clusters with minimized intra-cluster distances. K-means requires a pre-specified number of clusters, denoted by 'k.' The process continues until convergence, where the assignment of data points and the cluster centroids stabilize. The algorithm is efficient and widely used for tasks such as customer segmentation, image compression, and pattern recognition. However, its performance can be sensitive to the initial placement of cluster centroids, and the choice of 'k' requires careful consideration. Despite its limitations, K-means clustering serves as a foundational technique in exploratory data analysis and unsupervised learning.
+
 ## 1. Data
 
 For clustering using K-means, we use the freely available USArrests dataset. We aim to cluster the states of US based on the crimes from the USAressts data.
