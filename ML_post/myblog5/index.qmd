@@ -1,0 +1,29 @@
+---
+title: "Anamoly detection"
+description: "ML assignment blog 5"
+date: 2023-12-02
+categories: [Machine Learning] 
+draft: false
+---
+
+## 1. Interquartile range (IQR) for anomaly detection
+
+In time series analysis, leveraging the interquartile range (IQR) is a robust method for detecting anomalies or outliers within a dataset. The IQR, representing the range between the first quartile (Q1) and the third quartile (Q3) of the data distribution, encapsulates the middle 50% of the observations. By calculating the IQR and defining a threshold, typically based on a multiple of the IQR, anomalies can be identified as data points falling outside this range. This technique is particularly effective in handling skewed or non-normally distributed data, offering a resilient measure of central tendency. In the context of time series data, applying the IQR method allows for the identification of unusual patterns or fluctuations that may deviate from the expected behavior. This approach is valuable in diverse fields, including finance, healthcare, and retail, where anomalous events can significantly impact decision-making processes and necessitate timely interventions.
+
+```{r}
+library(tidyverse)
+library(timetk)
+
+walmart_sales_weekly
+
+walmart_sales_weekly %>%
+  group_by(Store, Dept) %>%
+  tk_anomaly_diagnostics(Date, Weekly_Sales)
+
+
+walmart_sales_weekly %>%
+  group_by(Store, Dept) %>%
+  plot_anomaly_diagnostics(Date, Weekly_Sales, .facet_ncol = 2)
+
+
+```
