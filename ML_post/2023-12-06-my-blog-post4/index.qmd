@@ -1,0 +1,80 @@
+---
+title: "Regression"
+description: "ML assignment blog 4"
+date: 2023-12-02
+categories: [Machine Learning] 
+draft: false
+---
+
+In this blog, we'll use the GLM to perform simple linear regression. Below,you will find me using mtcars data for fitting a linear regression model between the variables weight and miles per gallon for car dataset.
+
+## 1. Simple linear regression
+
+-   **Definition:** Simple linear regression involves predicting a dependent variable (response) based on a single independent variable (predictor).
+
+-   **Equation:** y=β0+β1x+ϵ, where y is the dependent variable, x is the independent variable, β0​ is the intercept, β1​ is the slope, and ϵ is the error term
+
+```{r}
+
+library(ggplot2)
+
+# Load the mtcars dataset
+data(mtcars)
+
+# Explore the dataset
+head(mtcars)
+summary(mtcars)
+
+# Scatter plot
+plot(mtcars$wt, mtcars$mpg, main="Scatter Plot", xlab="Weight", ylab="Miles Per Gallon", col="blue")
+
+# Fit the linear regression model
+model <- lm(mpg ~ wt, data = mtcars)
+
+# Display the summary of the model
+summary(model)
+
+# Visualize the regression line
+
+
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() +
+  stat_smooth(method = lm)
+
+
+
+```
+
+## 2. Non-Linear Regression Models:
+
+Linear regression models assume a linear relationship between the independent variables and the dependent variable. However, in many real-world scenarios, the relationship may not be strictly linear. Non-linear regression models are used when the relationship between variables is better described by a non-linear equation.
+
+```{r}
+
+
+# Load the mtcars dataset
+data(mtcars)
+
+# Fit a quadratic non-linear regression model
+model <- lm(mpg ~ poly(hp, 2), data = mtcars)
+
+# Generate predicted values
+predictions <- predict(model, newdata = data.frame(hp = mtcars$hp))
+
+# Plot the data and non-linear regression curve
+plot(mtcars$hp, mtcars$mpg, main="Quadratic Non-Linear Regression", xlab="Horsepower", ylab="Miles Per Gallon", col="blue")
+
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point(color = "blue") +
+  
+  # Add a dashed line for the non-linear regression curve
+  geom_line(aes(y = predictions), color = "red") +
+   # Labels and title
+  labs(title = "Quadratic Non-Linear Regression",
+       x = "Horsepower",
+       y = "Miles Per Gallon") 
+
+# Display the model summary
+summary(model)
+
+```
