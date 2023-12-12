@@ -14,7 +14,10 @@ In time series analysis, leveraging the interquartile range (IQR) is a robust me
 library(tidyverse)
 library(timetk)
 
+
 walmart_sales_weekly
+
+plot(walmart_sales_weekly$Weekly_Sales, col = "blue", lty = 2)
 
 walmart_sales_weekly %>%
   group_by(Store, Dept) %>%
