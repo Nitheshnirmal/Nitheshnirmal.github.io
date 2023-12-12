@@ -212,6 +212,7 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
 
 
 <p>In this blog regarding classification algorithms, we will see about the multiclass random forest model using penguins data. Based on certain features of penguins will try to train a multiclass random forest model and predict the penguin species.</p>
+<p>Random Forest is a robust and versatile ensemble learning technique widely employed for both classification and regression tasks. Comprising an ensemble of decision trees, each tree is trained on a bootstrapped sample of the original dataset and considers a random subset of features at each split, mitigating overfitting. The model’s predictions are determined through a majority vote in classification or an average in regression, fostering accuracy and stability. Notably, Random Forest provides insights into feature importance, aiding in the identification of variables contributing significantly to predictive performance. It exhibits resilience against overfitting, particularly due to its feature randomization and bootstrapping mechanisms. Hyperparameter tuning can further enhance the model’s performance, making Random Forest a versatile and powerful tool in machine learning applications.</p>
 <section id="required-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="required-libraries">1. Required libraries</h2>
 <div class="cell">
@@ -244,7 +245,7 @@ gtag('config', 'G-WPPJJR0N52', { 'anonymize_ip': true});
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Use tidymodels_prefer() to resolve common conflicts.</code></pre>
+• Search for functions across packages at https://www.tidymodels.org/find/</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -470,9 +471,9 @@ Computational engine: ranger </code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Truth
 Prediction  Adelie Chinstrap Gentoo
-  Adelie      2842        73      5
-  Chinstrap     78      1282      0
-  Gentoo         0         5   2375</code></pre>
+  Adelie      2825        94      1
+  Chinstrap     65      1295      0
+  Gentoo         0        12   2368</code></pre>
 </div>
 </div>
 </section>
@@ -500,9 +501,9 @@ Prediction  Adelie Chinstrap Gentoo
 <pre><code>Random Forest Model Specification (classification)
 
 Main Arguments:
-  mtry = 4
+  mtry = 2
   trees = 1000
-  min_n = 2
+  min_n = 4
 
 Computational engine: ranger </code></pre>
 </div>
@@ -519,15 +520,15 @@ Computational engine: ranger </code></pre>
 <pre><code># A tibble: 2 × 4
   .metric  .estimator .estimate .config             
   &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               
-1 accuracy multiclass     0.964 Preprocessor1_Model1
-2 roc_auc  hand_till      0.998 Preprocessor1_Model1</code></pre>
+1 accuracy multiclass     0.988 Preprocessor1_Model1
+2 roc_auc  hand_till      1     Preprocessor1_Model1</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>final_res <span class="sc">%&gt;%</span> <span class="fu">collect_predictions</span>() <span class="sc">%&gt;%</span> <span class="fu">conf_mat</span>(.pred_class, species )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Truth
 Prediction  Adelie Chinstrap Gentoo
-  Adelie        35         2      0
-  Chinstrap      1        16      0
+  Adelie        36         1      0
+  Chinstrap      0        17      0
   Gentoo         0         0     30</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>final_prod <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span> </span>
@@ -549,17 +550,17 @@ species ~ .
 Ranger result
 
 Call:
- ranger::ranger(x = maybe_data_frame(x), y = y, mtry = min_cols(~4L,      x), num.trees = ~1000, min.node.size = min_rows(~2L, x),      num.threads = 1, verbose = FALSE, seed = sample.int(10^5,          1), probability = TRUE) 
+ ranger::ranger(x = maybe_data_frame(x), y = y, mtry = min_cols(~2L,      x), num.trees = ~1000, min.node.size = min_rows(~4L, x),      num.threads = 1, verbose = FALSE, seed = sample.int(10^5,          1), probability = TRUE) 
 
 Type:                             Probability estimation 
 Number of trees:                  1000 
 Sample size:                      333 
 Number of independent variables:  7 
-Mtry:                             4 
-Target node size:                 2 
+Mtry:                             2 
+Target node size:                 4 
 Variable importance mode:         none 
 Splitrule:                        gini 
-OOB prediction error (Brier s.):  0.01537413 </code></pre>
+OOB prediction error (Brier s.):  0.01591039 </code></pre>
 </div>
 </div>
 </section>
