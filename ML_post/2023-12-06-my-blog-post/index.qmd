@@ -6,6 +6,10 @@ categories: [Machine Learning]
 draft: false
 ---
 
+Probability theory is a branch of mathematics that deals with the study of uncertainty and randomness. It provides a framework for quantifying and reasoning about uncertainty, allowing us to model and analyze various phenomena that involve chance or randomness. The central concept in probability theory is the probability, which represents the likelihood of different outcomes in a random experiment.
+
+## 1. Required packages and probability density
+
 ```{r, warning=FALSE}
 
 #install.packages("palmerpenguins")
@@ -80,6 +84,8 @@ print(penguin_density_plots3)
 
 ```
 
+## 2. Conditional probability
+
 ```{r}
 
 #conditional probabilities
@@ -112,5 +118,48 @@ print(conditional_probabilities_sex)
 
 
 
+
+```
+
+## 3. Random variables
+
+A random variable is a mathematical function that assigns a numerical value to each outcome in the sample space of a random experiment. It serves as a way to quantify and analyze the variability and uncertainty associated with random processes. Random variables can be classified as either discrete or continuous.
+
+```{r}
+
+# Simulate rolling a fair six-sided die
+die_outcomes <- 1:6
+
+# Define random variables X and Y
+X <- sample(die_outcomes, 1, replace = TRUE)
+Y <- sample(die_outcomes, 1, replace = TRUE)
+
+# Print the outcomes of X and Y
+cat("Outcome of X:", X, "\n")
+cat("Outcome of Y:", Y, "\n")
+
+# Calculate the sum Z
+Z <- X + Y
+cat("Sum Z:", Z, "\n")
+
+# Simulate rolling the dice multiple times to estimate probabilities
+num_simulations <- 10000
+
+# Simulate X and Y
+simulated_X <- sample(die_outcomes, num_simulations, replace = TRUE)
+simulated_Y <- sample(die_outcomes, num_simulations, replace = TRUE)
+
+# Calculate the sum Z for each simulation
+simulated_Z <- simulated_X + simulated_Y
+
+# Calculate the empirical probabilities
+empirical_probabilities <- table(simulated_Z) / num_simulations
+
+# Print the empirical probabilities
+cat("Empirical Probabilities for Z:\n")
+print(empirical_probabilities)
+
+# Plot the empirical probabilities
+barplot(empirical_probabilities, names.arg = 2:12, col = "skyblue", main = "Empirical Probabilities of Dice Sum", xlab = "Sum", ylab = "Probability")
 
 ```
