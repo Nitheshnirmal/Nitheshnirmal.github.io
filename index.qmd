@@ -1,5 +1,5 @@
 ---
-title: "Nitheshnirmal Sadhasivam"
+title: "Nitheshnirmal Sadhasivam" 
 image: NN.jpg
 about: 
   template: trestles
@@ -25,27 +25,7 @@ title-block-banner: true
 ---
 
 ::: {#Bio}
-## Bio
+## About me
 
-Hi, I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. My interdisciplinary research leverages geodetic remote sensing, physical models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions.
-
-I will be using this website to post my publications and blogs.
-
-::: {#Experience}
-## [Experience]{.underline}
-
-![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"} **Virginia Tech** \| Graduate Research Assistant \| Jan 2023 - Present
-
-![](images/download-01.png){width="48"}**University of Twente** \| Education and Research Officer \| Nov 2022 - Dec 2022
-
-![](images/DLR_Logo.svg.png){width="47"}**German Aerospace Centre** **(DLR)** \| Research Intern \| Dec 2021 - Feb 2022
-:::
-
-## [Education]{.underline} {#Education}
-
-![](images/Virginia_Tech_Hokies_logo.svg-01.png){width="44"}**Virginia Tech** \| Blacksburg, VA, PhD in Geosciences \| Jan 2023 - Present
-
-![](images/download-01.png){width="48"}**University of Twente** \| Enschede, The Netherlands MSc in Geo-information Science and Earth Observation (Specialisation: Natural Hazards and Disaster Risk Reduction) \| Aug 2020 - Aug 2022
-
-![](images/Bharathidasan_University_logo-01.png){width="47"} **Bharathidasan University** \| India, MSc in Geography (Integrated) \| July 2014 - April 2019
+I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. My interdisciplinary research leverages geodetic remote sensing, physical models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions.
 :::

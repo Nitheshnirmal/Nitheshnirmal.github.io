@@ -11,7 +11,7 @@ website:
     anonymize-ip: true
   page-navigation: true
   page-footer: 
-    center: "copyright 2023"
+    center: "copyright 2024"
     right: "Nitheshnirmal Sadhasivam"
   navbar:
     foreground: light
@@ -23,8 +23,7 @@ website:
       - href: about.qmd
       - href: publication.qmd
         text: Publication
-      - href: Blog.qmd
-        text: ML_blog
+ 
         
         
 
