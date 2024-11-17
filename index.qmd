@@ -29,13 +29,16 @@ title-block-banner: false
 
 I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. I have background in Geo-information Science and Earth Observation and Geography. My interdisciplinary doctoral research leverages geodetic remote sensing, physical models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions.
 :::
-##
-##
+
+## 
+
+## 
+
 ::: talk-highlight
 ## Upcoming Talk
 
-**Date:** 9 December 2024\
-**Title:** From Dry to Wet: Are Deep Central Valley Aquifers Recharged Following the Very Wet 2023?\
-**Authors:** **Sadhasivam, N.**, Werth, S., Carlson, G., Shirzaei, M.\
-**Event:** AGU Fall Meeting 2024, Washington D.C
+***Title:*** From Dry to Wet: Are Deep Central Valley Aquifers Recharged Following the Very Wet 2023?\
+***Authors:*** **Sadhasivam, N.**, Werth, S., Carlson, G., Shirzaei, M.\
+***Event:*** AGU Fall Meeting 2024, Washington D.C\
+***Date:*** 9 December 2024\
 :::
