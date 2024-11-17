@@ -34,7 +34,8 @@ format:
   html:
     page-layout: full
     theme: 
-      light: Cerulean
+      light: journal
+      dark: journal
     css: styles.css
 
 editor: visual
