@@ -1,76 +1,223 @@
-/* General Body Styling */
+/* General Styles */
 body {
-  font-family: 'Arial', sans-serif; /* Clean and modern font */
-  background-color: #ffffff; /* Set a pure white background for simplicity */
-  color: #222; /* Slightly darker text color for better contrast */
-  line-height: 1.8; /* Slightly increased line height for better readability */
-  margin: 0; /* Remove any browser-imposed margin */
-  padding: 0; /* Remove default padding */
-  width: 100%; /* Use full page width */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: 'Roboto', sans-serif;
+  color: Black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  color: Black;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
 /* Navbar */
 .navbar {
+  background-color: #2c3e50;
+  color: Maroon;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #2c3e50;
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
+  color: Maroon;
+  margin: 0 0.5rem;
 }
 
 .navbar a:hover {
-  color: #f39c12;
+  color: #ecf0f1;
 }
 
-/* Title Block */
-.title-block {
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-  padding: 5rem 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+/* Buttons */
+.btn {
+  background-color: #3498db;
+  border: none;
+  color: Maroon;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.title-block h1 {
-  font-size: 3rem;
+.btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
   font-weight: bold;
-  margin: 0;
+  color: #34495e;
 }
 
-.title-block p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Section Styling */
-.section {
-  padding: 3rem 1rem;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-#bio, #talks, #projects, #contact {
-  margin-bottom: 5rem;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
+.card-text {
+  color: #7f8c8d;
 }
 
 /* Footer */
-footer {
+.footer {
   background-color: #2c3e50;
   color: white;
   text-align: center;
   padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #ecf0f1;
+}
+
+.footer a:hover {
+  color: #bdc3c7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Upcoming Talk Section */
+.upcoming-talk {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.upcoming-talk h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #ecf0f1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.upcoming-talk p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ecf0f1;
+  line-height: 1.6;
+}
+
+.upcoming-talk .date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+.upcoming-talk .authors {
+  font-size: 1rem;
+  font-style: italic;
+  color: #bdc3c7;
+}
+
+.upcoming-talk .event {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ecf0f1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
