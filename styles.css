@@ -1,1 +1,76 @@
-/* css styles */
+/* General Body Styling */
+body {
+  font-family: 'Helvetica', sans-serif; /* Clean and modern font */
+  background-color: #ffffff; /* Set a pure white background for simplicity */
+  color: #222; /* Slightly darker text color for better contrast */
+  line-height: 1.8; /* Slightly increased line height for better readability */
+  margin: 0; /* Remove any browser-imposed margin */
+  padding: 0; /* Remove default padding */
+  width: 100%; /* Use full page width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #2c3e50;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+  color: #f39c12;
+}
+
+/* Title Block */
+.title-block {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.title-block h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title-block p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Section Styling */
+.section {
+  padding: 3rem 1rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#bio, #talks, #projects, #contact {
+  margin-bottom: 5rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
