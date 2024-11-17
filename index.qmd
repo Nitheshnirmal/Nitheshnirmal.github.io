@@ -4,7 +4,7 @@ image: NN.jpg
 about: 
   template: trestles
   image-shape: rounded
-  image-width: 20em
+  image-width: 18em
   links:
     - text: GS
       icon: google
@@ -32,7 +32,6 @@ I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeode
 
 ## 
 
-## 
 
 ::: talk-highlight
 ## Upcoming Talk
