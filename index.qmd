@@ -43,7 +43,7 @@ I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeode
 ::: new-highlight
 ## What's New
 
-I was part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
+I am part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
 
 -   Shirzaei, M., **Sadhasivam, N.**, Werth, S., Lucy, J., Etzler, W., Matin, M., Madani, K. (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001 ([Link](https://unu.edu/inweh/collection/helene-disaster-threat-poor-management-and-climate-change-human-lives-and-assets)).
 :::
