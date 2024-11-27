@@ -3,6 +3,12 @@ title: "Research articles"
 title-block-banner: true
 ---
 
+## 2024
+
+::: {#2024}
+1.  Shirzaei, M., **Sadhasivam, N.**, Werth, S., Lucy, J., Etzler, W., Matin, M., Madani, K. (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001. ([link](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf))
+:::
+
 ## 2023
 
 ::: {#2023}
