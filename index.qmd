@@ -1,6 +1,6 @@
 ---
 title: "Nitheshnirmal Sadhasivam" 
-image: NN.jpg
+image: NN1.jpg
 about: 
   template: trestles
   image-shape: rounded
