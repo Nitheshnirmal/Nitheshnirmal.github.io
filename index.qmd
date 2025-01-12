@@ -27,7 +27,7 @@ title-block-banner: false
 ::: {#Bio}
 ## Short Bio
 
-I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. I am a part of Hydrologic Innovation and Remote Sensing Lab led by Dr. Susanna Werth and Earth Observation and Innovation Lab led by Dr. Manoochehr Shirzaei in Virginia Tech. I have background in Geo-information Science and Earth Observation and Geography. My interdisciplinary doctoral research leverages satellite geodesy, physics-based models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions.
+I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. I am a part of Hydrologic Innovation and Remote Sensing Lab led by Dr. Susanna Werth and Earth Observation and Innovation Lab led by Dr. Manoochehr Shirzaei in Virginia Tech. I have background in Geo-information Science and Earth Observation and Geography. My interdisciplinary doctoral research leverages satellite geodesy, physics-based models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions. Know more about me [here](https://globalchange.vt.edu/graduate/people-of-the-igc/current-fellows/sadhasivan-nitheshnirmal.html)
 :::
 
 # 
