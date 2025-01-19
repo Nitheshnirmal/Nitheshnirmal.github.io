@@ -6,7 +6,7 @@ title-block-banner: false
 ## Selected publications
 
 ::: {#2024}
-1.  Shirzaei, M., Vahedifard, F., **Sadhasivam, N.**, Ohenhen, L., Dasho, O., Tiwari, A., ... & AghaKouchak, A. (2025). Aging dams, political instability, poor human decisions and climate change: recipe for human disaster. *npj Natural Hazards*, *2*(1), 5. <https://doi.org/10.1038/s44304-024-00056-1>
+1.  Shirzaei, M, Vahedifard, F, **Sadhasivam, N**, Ohenhen, L, Dasho, O, Tiwari, A, ... & AghaKouchak, A. (2025). Aging dams, political instability, poor human decisions and climate change: recipe for human disaster. *npj Natural Hazards*, *2*(1), 5. <https://doi.org/10.1038/s44304-024-00056-1>
 
 2.  Shirzaei, M, **Sadhasivam, N**, Werth, S, Lucy, J, Etzler, W, Matin, M, Madani, K (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001. ([link](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf))
 
