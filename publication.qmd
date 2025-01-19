@@ -6,25 +6,27 @@ title-block-banner: false
 ## Selected publications
 
 ::: {#2024}
-1.  Shirzaei, M, **Sadhasivam, N**, Werth, S, Lucy, J, Etzler, W, Matin, M, Madani, K (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001. ([link](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf))
+1.  Shirzaei, M., Vahedifard, F., **Sadhasivam, N.**, Ohenhen, L., Dasho, O., Tiwari, A., ... & AghaKouchak, A. (2025). Aging dams, political instability, poor human decisions and climate change: recipe for human disaster. *npj Natural Hazards*, *2*(1), 5. <https://doi.org/10.1038/s44304-024-00056-1>
 
-2.  **Sadhasivam, N**, Chang, L, Tanyas, H (2024). An integrated approach for mapping slow-moving hillslopes and characterizing their activity using InSAR, slope units and a novel 2-D deformation scheme. *Nat Hazards* **120**, 3919–3941. DOI: <https://doi.org/10.1007/s11069-023-06353-8>
+2.  Shirzaei, M, **Sadhasivam, N**, Werth, S, Lucy, J, Etzler, W, Matin, M, Madani, K (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001. ([link](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf))
 
-3.  Ahmad SM, **Sadhasivam N**, Lisa M, Lombardo L, Emil MK, Fadel I, van Westen CJ, Ahmed A. & Tanyas H (2022) Standing on the shoulder of a giant landslide: A six-year long InSAR look at a slow-moving hillslope in the western Karakoram. Geomorphology, 444, 108959. DOI: <https://doi.org/10.1016/j.geomorph.2023.108959>
+3.  **Sadhasivam, N**, Chang, L, Tanyas, H (2024). An integrated approach for mapping slow-moving hillslopes and characterizing their activity using InSAR, slope units and a novel 2-D deformation scheme. *Nat Hazards* **120**, 3919–3941. DOI: <https://doi.org/10.1007/s11069-023-06353-8>
 
-4.  He K, Lombardo L, Chang L, **Sadhasivam N**, Hu X, Fang Z, & Tanyas H (2022) Investigating earthquake legacy effect on hillslope deformation using InSAR-derived time series. Earth Surface Processes and Landforms. DOI: <https://onlinelibrary.wiley.com/doi/epdf/10.1002/esp.5746>
+4.  Ahmad SM, **Sadhasivam N**, Lisa M, Lombardo L, Emil MK, Fadel I, van Westen CJ, Ahmed A. & Tanyas H (2022) Standing on the shoulder of a giant landslide: A six-year long InSAR look at a slow-moving hillslope in the western Karakoram. Geomorphology, 444, 108959. DOI: <https://doi.org/10.1016/j.geomorph.2023.108959>
 
-5.  **Sadhasivam N,** Sheik Mohideen AR & Alankar B (2020) Optimisation of landfill sites for solid waste disposal in Thiruverumbur taluk of Tiruchirappalli district, India. Environmental Earth Sciences, 79(23), pp.1‑20. DOI: <https://doi.org/10.1007/s12665-020-09264-0>
+5.  He K, Lombardo L, Chang L, **Sadhasivam N**, Hu X, Fang Z, & Tanyas H (2022) Investigating earthquake legacy effect on hillslope deformation using InSAR-derived time series. Earth Surface Processes and Landforms. DOI: <https://onlinelibrary.wiley.com/doi/epdf/10.1002/esp.5746>
 
-6.  Panahi M, **Sadhasivam N**, Pourghasemi HR, Rezaie F & Lee S (2020) Spatial prediction of groundwater potential mapping based on convolutional neural network (CNN) and support vector regression (SVR). Journal of Hydrology, 588, p.125033. DOI: <https://doi.org/10.1016/j.jhydrol.2020.125033>
+6.  **Sadhasivam N,** Sheik Mohideen AR & Alankar B (2020) Optimisation of landfill sites for solid waste disposal in Thiruverumbur taluk of Tiruchirappalli district, India. Environmental Earth Sciences, 79(23), pp.1‑20. DOI: <https://doi.org/10.1007/s12665-020-09264-0>
 
-7.  **Sadhasivam N**, Bhardwaj A, Pourghasemi HR & Kamaraj NP (2020) Morphometric attributes‑based soil erosion susceptibility mapping in Dnyanganga watershed of India using individual and ensemble models. Environmental Earth Sciences, 79(14), pp.1‑28. DOI: <https://doi.org/10.1007/s12665-020-09102-3>
+7.  Panahi M, **Sadhasivam N**, Pourghasemi HR, Rezaie F & Lee S (2020) Spatial prediction of groundwater potential mapping based on convolutional neural network (CNN) and support vector regression (SVR). Journal of Hydrology, 588, p.125033. DOI: <https://doi.org/10.1016/j.jhydrol.2020.125033>
 
-8.  **Nitheshnirmal S**, Thilagaraj P, Rahaman S A, & Jegankumar R (2019). Erosion risk assessment through morphometric indices for prioritisation of Arjuna watershed using ALOS-PALSAR DEM. Modeling Earth Systems and Environment, *5*(3), pp. 907-924. DOI: <https://doi.org/10.1007/s40808-019-00578-y>
+8.  **Sadhasivam N**, Bhardwaj A, Pourghasemi HR & Kamaraj NP (2020) Morphometric attributes‑based soil erosion susceptibility mapping in Dnyanganga watershed of India using individual and ensemble models. Environmental Earth Sciences, 79(14), pp.1‑28. DOI: <https://doi.org/10.1007/s12665-020-09102-3>
 
-9.  Pourghasemi HR, **Sadhasivam N**, Kariminejad N & Collins AL (2020) Gully erosion spatial modelling: Role of machine learning algorithms in selection of the best controlling factors and modelling process. Geoscience Frontiers, 11(6), pp.2207‑2219. DOI: <https://doi.org/10.1016/j.gsf.2020.03.005>
+9.  **Nitheshnirmal S**, Thilagaraj P, Rahaman S A, & Jegankumar R (2019). Erosion risk assessment through morphometric indices for prioritisation of Arjuna watershed using ALOS-PALSAR DEM. Modeling Earth Systems and Environment, *5*(3), pp. 907-924. DOI: <https://doi.org/10.1007/s40808-019-00578-y>
 
-10. Pourghasemi HR, Yousefi S, **Sadhasivam N** & Eskandari S (2020) Assessing, mapping, and optimizing the locations of sediment control check dams construction. Science of the Total Environment, 739, p.139954. DOI: <https://doi.org/10.1016/j.scitotenv.2020.139954>
+10. Pourghasemi HR, **Sadhasivam N**, Kariminejad N & Collins AL (2020) Gully erosion spatial modelling: Role of machine learning algorithms in selection of the best controlling factors and modelling process. Geoscience Frontiers, 11(6), pp.2207‑2219. DOI: <https://doi.org/10.1016/j.gsf.2020.03.005>
+
+11. Pourghasemi HR, Yousefi S, **Sadhasivam N** & Eskandari S (2020) Assessing, mapping, and optimizing the locations of sediment control check dams construction. Science of the Total Environment, 739, p.139954. DOI: <https://doi.org/10.1016/j.scitotenv.2020.139954>
 :::
 
 ## 
