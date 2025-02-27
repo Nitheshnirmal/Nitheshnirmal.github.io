@@ -27,7 +27,7 @@ title-block-banner: false
 ::: {#Bio}
 ## Short Bio
 
-I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. I am a part of Hydrologic Innovation and Remote Sensing Lab led by Dr. Susanna Werth and Earth Observation and Innovation Lab led by Dr. Manoochehr Shirzaei in Virginia Tech. I have background in Geo-information Science and Earth Observation and Geography. My interdisciplinary doctoral research leverages satellite geodesy, physics-based models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions. Know more about me [here](https://globalchange.vt.edu/graduate/people-of-the-igc/current-fellows/sadhasivan-nitheshnirmal.html)
+I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeodesist. I am a part of Hydrologic Innovation and Remote Sensing Lab led by Dr. Susanna Werth and Earth Observation and Innovation Lab led by Dr. Manoochehr Shirzaei in Virginia Tech. I have background in Geo-information Science and Earth Observation, and Geography. My interdisciplinary doctoral research leverages satellite geodesy, physics-based models, and artificial intelligence to address global challenges associated with groundwater and geohazards. My work aims to provide decision-makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities in tackling water scarcity issues amid changing climatic conditions. Know more about me [here](https://globalchange.vt.edu/graduate/people-of-the-igc/current-fellows/sadhasivan-nitheshnirmal.html)
 :::
 
 # 
@@ -35,7 +35,9 @@ I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeode
 ::: talk-highlight
 ## Upcoming Talk
 
--   **Sadhasivam, N.**, Werth, S., Carlson, G., Shirzaei, M. (9 December 2024). From Dry to Wet: Are Deep Central Valley Aquifers Recharged Following the Very Wet 2023? AGU Fall Meeting 2024, Washington D.C.
+-   I will be presenting a poster about my work on California's Central Valley groundwater recharge during wet year 2023 in 2025 USGIF GEOINT Symposium (updates on this soon).
+
+-   Co-authored abstract got accepted for the 2025 EGU session NH6.2 – SAR remote sensing for natural and human-induced hazard applications (updates on this soon)**.**
 :::
 
 # 
@@ -43,9 +45,11 @@ I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeode
 ::: new-highlight
 ## What's New
 
-1.  Recipient of William A. Fischer Memorial Scholarship from the American Society of Photogrammetry and Remote Sensing (ASPRS) on January 2025.
+1.  Co-authored work focusing on 2023 Libya Dam Collapse published in npj Natural Hazards ([link](https://www.nature.com/articles/s44304-024-00056-1)).
 
-2.  I am part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
+2.  Recipient of William A. Fischer Memorial Scholarship from the American Society of Photogrammetry and Remote Sensing (ASPRS) on January 2025.
+
+3.  I am part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
 
     Shirzaei, M., **Sadhasivam, N.**, Werth, S., Lucy, J., Etzler, W., Matin, M., Madani, K. (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001 ([Link](https://unu.edu/inweh/collection/helene-disaster-threat-poor-management-and-climate-change-human-lives-and-assets)).
 :::
@@ -55,7 +59,8 @@ I am a PhD student in Geosciences at Virginia Tech, specializing as a Hydrogeode
 ::: past-highlight
 ## What's old
 
-1.  I presented my research work on Central Valley of California as a talk in the 2024 GRACE/GRACE-FO Science Team Meeting.
+1.  **Sadhasivam, N.**, Werth, S., Carlson, G., Shirzaei, M. (9 December 2024). From Dry to Wet: Are Deep Central Valley Aquifers Recharged Following the Very Wet 2023? AGU Fall Meeting 2024, Washington D.C.
+2.  I presented my research work on Central Valley of California as a talk in the 2024 GRACE/GRACE-FO Science Team Meeting.
 
 -   **Sadhasivam, N.**, Werth, S., Carlson, G., and Shirzaei, M.: Did the Record-Breaking Rains of 2023 Revive Central Valley's Deep Aquifers?, GRACE/GRACE-FO Science Team Meeting, Potsdam, Germany, 8–10 Oct 2024, GSTM2024-69, [https://doi.org/10.5194/gstm2024-69, 2024](https://doi.org/10.5194/gstm2024-69,%202024).
 
