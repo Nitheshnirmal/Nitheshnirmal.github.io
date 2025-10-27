@@ -25,27 +25,31 @@ title-block-banner: false
 ---
 
 ::: {#Bio}
-## Short Bio
+## Hi.
 
-Growing up in a hot semi-arid region (Köppen BSh) frequently affected by drought and groundwater stress, and having experienced it firsthand, I developed a deep curiosity about how aquifer systems respond to climate extremes, human use, and their broader impact on vulnerable communities. This curiosity, along with my fascination with how groundwater dynamics physically moves ground, led me to pursue a PhD in Geosciences at Virginia Tech, specializing in Hydrogeodesy. I currently work with Dr. Susanna Werth and Dr. Manoochehr Shirzaei. I have a background in Geo-information Science, Earth Observation, and Geography. My interdisciplinary doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. With my work, I aim to provide policy makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities globally in tackling water scarcity issues and related geohazards such as land subsidence amid changing climatic conditions. Know more about me [here](https://globalchange.vt.edu/graduate/people-of-the-igc/current-fellows/sadhasivan-nitheshnirmal.html)
+I’m a hydrogeodesist and geoscientist pursuing my Ph.D. in Geosciences at Virginia Tech, USA. My interdisciplinary doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. This website offers a glimpse into my research, what I study, how I study it, and why understanding Earth’s hidden water matters.
 :::
 
 # 
 
 ::: talk-highlight
 ## Upcoming Talk
+
+\*No upcoming talk (as of Oct 24, 2025). Last talk on Oct 22, 2025, check out below.
 :::
 
 ::: new-highlight
 ## What's New
 
-1.  Co-authored work focusing on land subsidence risk to infrastructure in US metropolises published in Nature cities ([link](https://www.nature.com/articles/s44284-025-00240-y)). The work has been mentioned in \>200 news media reports, including NYT, WP, and many more.
+1.  Co-authored work focusing on
 
-2.  Co-authored work focusing on 2023 Libya Dam Collapse published in npj Natural Hazards ([link](https://www.nature.com/articles/s44304-024-00056-1)).
+2.  Co-authored work focusing on land subsidence risk to infrastructure in US metropolises published in Nature cities ([link](https://www.nature.com/articles/s44284-025-00240-y)). The work has been mentioned in \>200 news media reports, including NYT, WP, and many more.
 
-3.  Recipient of William A. Fischer Memorial Scholarship from the American Society of Photogrammetry and Remote Sensing (ASPRS) on January 2025.
+3.  Co-authored work focusing on 2023 Libya Dam Collapse published in npj Natural Hazards ([link](https://www.nature.com/articles/s44304-024-00056-1)).
 
-4.  I am part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
+4.  Recipient of William A. Fischer Memorial Scholarship from the American Society of Photogrammetry and Remote Sensing (ASPRS) on January 2025.
+
+5.  I am part of a UN report led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
 
     Shirzaei, M., **Sadhasivam, N.**, Werth, S., Lucy, J., Etzler, W., Matin, M., Madani, K. (2024). Helene Disaster: The Threat of Poor Management and Climate Change to Human Lives and Assets, United Nations University Institute for Water, Environment and Health (UNU-INWEH), Richmond Hill, Ontario, Canada, doi: 10.53328/INR24MSIR001 ([Link](https://unu.edu/inweh/collection/helene-disaster-threat-poor-management-and-climate-change-human-lives-and-assets)).
 :::

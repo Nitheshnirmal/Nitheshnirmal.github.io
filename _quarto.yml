@@ -21,8 +21,8 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
-      - href: publication.qmd
-        text: Publication
+      - href: publications.qmd
+        text: Publications
 
         
 
