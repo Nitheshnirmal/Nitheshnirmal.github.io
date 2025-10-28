@@ -1,0 +1,5 @@
+---
+title: "About me"
+---
+
+Growing up in a hot semi-arid region (Köppen BSh) frequently affected by drought and groundwater stress, and having experienced it firsthand, I developed a deep curiosity about how aquifer systems respond to climate extremes, human use, and their broader impact on vulnerable communities. This curiosity, along with my fascination with how groundwater dynamics physically moves ground, led me to pursue a PhD in Geosciences at Virginia Tech, specializing in Hydrogeodesy. I currently work with Dr. Susanna Werth and Dr. Manoochehr Shirzaei. I have a background in Geo-information Science, Earth Observation, and Geography. My interdisciplinary doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. With my work, I aim to provide policy makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities globally in tackling water scarcity issues and related geohazards amid changing climatic conditions.

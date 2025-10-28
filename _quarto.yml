@@ -20,7 +20,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
+      - href: About me.qmd
+        text: About me        
+      - href: Looking Back.qmd
+        text: Looking Back
 
         
 
