@@ -11,7 +11,7 @@ website:
     anonymize-ip: true
   page-navigation: true
   page-footer: 
-    center: "copyright 2024"
+    center: "copyright 2026"
     right: "Nitheshnirmal Sadhasivam"
   navbar:
     foreground: light
@@ -24,6 +24,8 @@ website:
         text: About me        
       - href: Looking Back.qmd
         text: Looking Back
+      - href: Teaching.qmd
+        text: Teaching
 
         
 

@@ -1,5 +1,113 @@
 ---
-title: "About me"
+title: "About Me"
 ---
 
-Growing up in a hot semi-arid region (Köppen BSh) frequently affected by drought and groundwater stress, and having experienced it firsthand, I developed a deep curiosity about how aquifer systems respond to climate extremes, human use, and their broader impact on vulnerable communities. This curiosity, along with my fascination with how groundwater dynamics physically moves ground, led me to pursue a PhD in Geosciences at Virginia Tech, specializing in Hydrogeodesy. I currently work with Dr. Susanna Werth and Dr. Manoochehr Shirzaei. I have a background in Geo-information Science, Earth Observation, and Geography. My interdisciplinary doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. With my work, I aim to provide policy makers with critical insights for developing sustainable groundwater management policies, which are crucial for assisting vulnerable communities globally in tackling water scarcity issues and related geohazards amid changing climatic conditions.
+```{=html}
+<div class="about-intro">
+  <p class="lead-text">
+    Growing up in a <strong>hot semi-arid region (Köppen BSh)</strong> frequently affected by drought and groundwater stress, and having experienced it firsthand, I developed a deep curiosity about how aquifer systems respond to climate extremes, human use, and their broader impact on vulnerable communities.
+  </p>
+</div>
+
+<div class="about-grid">
+
+  <div class="about-card">
+    <div class="card-icon">🎓</div>
+    <h3>PhD Candidate in Geosciences</h3>
+    <p>Virginia Tech - Specializing in <strong>Hydrogeodesy</strong>, working with Dr. Susanna Werth and Dr. Manoochehr Shirzaei.</p>
+  </div>
+
+  <div class="about-card">
+    <div class="card-icon">🛰️</div>
+    <h3>Research Methods</h3>
+    <p>Satellite geodesy, radar remote sensing, physics-based poromechanical models, and artificial intelligence.</p>
+  </div>
+
+  <div class="about-card">
+    <div class="card-icon">🌍</div>
+    <h3>Background</h3>
+    <p>Geo-information Science, Earth Observation, and Geography.</p>
+  </div>
+
+  <div class="about-card">
+    <div class="card-icon">💧</div>
+    <h3>Research Focus</h3>
+    <p>Groundwater storage dynamics, geohazards, and their intersection with climate change and vulnerable communities.</p>
+  </div>
+
+</div>
+
+<div class="about-mission">
+  <blockquote>
+    "My goal is to provide policymakers with critical insights for developing <strong>sustainable groundwater management policies</strong>, helping vulnerable communities tackle water scarcity and related geohazards amid changing climatic conditions."
+  </blockquote>
+</div>
+
+<style>
+.about-intro {
+  margin-bottom: 2rem;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  border-left: 4px solid #2a7ae2;
+  padding-left: 1.2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.about-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card h3 {
+  margin: 0.3rem 0 0.6rem;
+  font-size: 1rem;
+  color: #1a1a2e;
+}
+
+.about-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-mission {
+  margin-top: 2rem;
+}
+
+.about-mission blockquote {
+  background: #eef4fd;
+  border-left: 5px solid #2a7ae2;
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  font-style: normal;
+  margin: 0;
+}
+</style>
+```

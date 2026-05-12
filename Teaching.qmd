@@ -1,0 +1,17 @@
+---
+title: ""
+---
+
+::: past-highlight
+## Teaching Experience
+
+**Graduate Teaching Assistant (GTA) — Virginia Tech**
+
+-   **GEOS 4804/5804G Groundwater Hydrology Lab (Advanced)** — Spring 2025
+    -   Teaching groundwater hydrology labs.
+    -   Grading student lab materials.
+
+-   **GEOS 4804/5804G Groundwater Hydrology Lab (Advanced)** — Spring 2024
+    -   Teaching groundwater hydrology labs.
+    -   Grading student lab materials.
+:::

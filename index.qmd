@@ -18,16 +18,13 @@ about:
     - text: GitHub
       icon: github
       href: https://github.com/Nitheshnirmal
-    - text: Email
-      icon: envelope
-      href: mailto:imnitheshnirmal@outlook.com
 title-block-banner: false
 ---
 
 ::: {#Bio}
-## Hi.
+## Hey there.
 
-I’m a hydrogeodesist and geoscientist pursuing my Ph.D. in Geosciences at Virginia Tech, USA. My doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. This website offers a glimpse into my research, what I study, how I study it, and why understanding Earth’s hidden water matters.
+I'm a hydrogeodesist by training, currently pursuing a Ph.D. in Geosciences at Virginia Tech, USA. My doctoral research leverages satellite geodesy, radar remote sensing, physics-based models, and artificial intelligence to address and advance our knowledge on global challenges associated with groundwater and geohazards. This website offers a glimpse into my research, what I study, how I study it, and why understanding Earth's hidden water matters.
 :::
 
 ::: talk-highlight
@@ -35,19 +32,159 @@ I’m a hydrogeodesist and geoscientist pursuing my Ph.D. in Geosciences at Virg
 
 ## What's new
 
-1.  My PhD work on building damage risk in sinking Indian megacitiesis published in **Nature Sustainability** ([link](https://www.nature.com/articles/s41893-025-01663-0))**.** The work has been mentioned in \>20 news media reports, including Hindu, Times of India, Bloomberg and many more.
+```{=html}
+<div class="pub-grid">
 
-2.  Co-authored work focusing on global subsidence of river deltas is published in **Nature** ([link](https://www.nature.com/articles/s41586-025-09928-6)).
+  <div class="pub-card">
+    <a href="https://www.nature.com/articles/s41893-025-01663-0" target="_blank">
+      <img src="covers/nature-sustainability.jpg" alt="Nature Sustainability Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">Nature Sustainability</span>
+      <p class="pub-title">Building damage risk in sinking Indian megacities</p>
+      <p class="pub-note">Mentioned in 20+ news media including Hindu, Times of India, Bloomberg, Firstpost</p>
+      <a href="https://www.nature.com/articles/s41893-025-01663-0" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
+  
+  
+  <div class="pub-card">
+    <a href="https://www.science.org/doi/full/10.1126/sciadv.aec0172" target="_blank">
+      <img src="covers/science-advances.jpg" alt="Science Advances Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">Science Advances</span>
+      <p class="pub-title">Land subsidence on Java Island and its contributions to relative sea level change</p>
+      <p class="pub-note">Co-authored work on land subsidence and relative sea level rise in Java Island</p>
+      <a href="https://www.science.org/doi/full/10.1126/sciadv.aec0172" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
 
-3.  Co-authored work focusing on building urban fire resilience to enhance national security published in **Nature cities** ([link](https://www.nature.com/articles/s44284-025-00296-w)).
+  <div class="pub-card">
+    <a href="https://www.nature.com/articles/s41586-025-09928-6" target="_blank">
+      <img src="covers/nature.jpg" alt="Nature Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">Nature</span>
+      <p class="pub-title">Global subsidence of river deltas</p>
+      <p class="pub-note">Co-authored work on delta subsidence worldwide.</p>
+      <a href="https://www.nature.com/articles/s41586-025-09928-6" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
 
-4.  Co-authored work focusing on land subsidence risk to infrastructure in US metropolises published in **Nature cities** ([link](https://www.nature.com/articles/s44284-025-00240-y)). The work has been mentioned in \>200 news media reports, including NYT, WP, and many more.
+  <div class="pub-card">
+    <a href="https://www.nature.com/articles/s44284-025-00296-w" target="_blank">
+      <img src="covers/nature-cities-fire.jpg" alt="Nature Cities Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">Nature Cities</span>
+      <p class="pub-title">Building urban fire resilience to enhance national security</p>
+      <p class="pub-note">Co-authored work on urban fire resilience.</p>
+      <a href="https://www.nature.com/articles/s44284-025-00296-w" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
 
-5.  Co-authored work focusing on 2023 Libya Dam Collapse published in **npj Natural Hazards** ([link](https://www.nature.com/articles/s44304-024-00056-1)).
+  <div class="pub-card">
+    <a href="https://www.nature.com/articles/s44284-025-00240-y" target="_blank">
+      <img src="covers/nature-cities-subsidence.jpg" alt="Nature Cities Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">Nature Cities</span>
+      <p class="pub-title">Land subsidence risk to infrastructure in US metropolises</p>
+      <p class="pub-note"> Co-authored, mentioned in 200+ media including NYT and Washington Post.</p>
+      <a href="https://www.nature.com/articles/s44284-025-00240-y" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
 
-6.  Recipient of William A. Fischer Memorial Scholarship from the **American Society of Photogrammetry and Remote Sensing (ASPRS)** on January 2025.
+  <div class="pub-card">
+    <a href="https://www.nature.com/articles/s44304-024-00056-1" target="_blank">
+      <img src="covers/npj-natural-hazards.jpg" alt="npj Natural Hazards Cover" class="pub-cover"/>
+    </a>
+    <div class="pub-info">
+      <span class="pub-journal">npj Natural Hazards</span>
+      <p class="pub-title">2023 Libya Dam Collapse</p>
+      <p class="pub-note">Co-authored work on the Libya dam disaster.</p>
+      <a href="https://www.nature.com/articles/s44304-024-00056-1" target="_blank" class="pub-link">Read →</a>
+    </div>
+  </div>
 
-7.  I am part of a **UN report** led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
+</div>
+
+<style>
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.pub-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.pub-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.pub-info {
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pub-journal {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2a7ae2;
+  margin-bottom: 0.3rem;
+}
+
+.pub-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.4;
+}
+
+.pub-note {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 0.6rem 0;
+  flex: 1;
+}
+
+.pub-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+.pub-link:hover {
+  text-decoration: underline;
+}
+</style>
+```
 
 </div>
 :::
