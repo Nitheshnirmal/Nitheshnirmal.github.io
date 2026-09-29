@@ -1,8 +1,7 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - "group-literature-review-fall-2026/index.html"
+
 
 website:
   title: "Nithesh"
@@ -28,8 +27,7 @@ website:
         text: Looking Back
       - href: Teaching.qmd
         text: Teaching
-      - href: group-literature-review-fall-2026/index.html
-        text: Lit Review
+
 
         
 
