@@ -5,6 +5,9 @@ title: ""
 ::: past-highlight
 ## What's old
 
+-   Co-authored work focusing on 2023 Libya Dam Collapse published in **npj Natural Hazards** ([link](https://www.nature.com/articles/s44304-024-00056-1)).
+-   Recipient of William A. Fischer Memorial Scholarship from the **American Society of Photogrammetry and Remote Sensing (ASPRS)** on January 2025.
+-   I am part of a **UN report** led by Dr. Manoochehr Shirzaei detailing the asset damage based on synthetic aperture radar (SAR) data during the recent Hurricane Helene, which hit east coast of USA. [Incident Brief Report](https://collections.unu.edu/eserv/UNU:10021/UNU-INWEH_IncidentBrief_Hurricane-Helene_Nov-2024.pdf), [Press Release](https://unu.edu/inweh/news/hurricane-helene-posed-threat-over-31000-properties-us-combined-value-exceeding-125).
 -   I presented my talk on October 23, 2025 about my work on California's Central Valley groundwater recharge during wet year 2023 in Geological Society of America Connects 25.
 -   I presented a poster on May 18, 2025 about my work on California's Central Valley groundwater recharge during wet year 2023 in 2025 USGIF GEOINT Symposium.
 -   Co-authored abstract got accepted for the 2025 EGU session NH6.2 – SAR remote sensing for natural and human-induced hazard applications (updates on this soon)**.**
